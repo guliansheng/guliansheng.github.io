@@ -262,7 +262,7 @@ object {
 	}
 .site-title {
 	margin: 0;
-	font-size: 3em;
+	font-size: 2.5em;
 	font-family: "Yanone Kaffeesatz", "Microsoft YaHei Light", Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
 	line-height: 1;
@@ -270,6 +270,8 @@ object {
 .site-title a {
 	color: #fff;
 	text-decoration: none;
+	display: inline-block;
+	padding: 10px 20px;
 	}
 .site-description {
 	color: #999;

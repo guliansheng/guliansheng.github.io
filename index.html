@@ -82,6 +82,8 @@ var themeMenus = {};
 
   themeMenus["/tags"] = "标签"; 
 
+  themeMenus["/about"] = "关于"; 
+
 </script>
 
 
@@ -94,7 +96,7 @@ var themeMenus = {};
 
           <h1 class="site-title">
             
-              <a href="/" title="欢迎来到初学者博客!" rel="home"> 奋斗的起点 </a>
+              <a href="/" title="欢迎来到初学者博客!" rel="home"> 不正常人类交流中心 </a>
             
           </h1>
 
@@ -115,6 +117,8 @@ var themeMenus = {};
                     
                       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">标签</a> </li>
                     
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">关于</a> </li>
+                    
               </ul>
             </div>
           </nav>
@@ -124,33 +128,6 @@ var themeMenus = {};
   </div>
 </header>
 
-
-  <div id="originBgDiv" style="background: #fff; width: 100%;">
-
-      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
-        <img id="originBg" width="100%" alt="" src="">
-      </div>
-
-  </div>
-
-  <script>
-  function setAboutIMG(){
-      var imgUrls = "css/images/pose.jpg,https://source.unsplash.com/collection/954550/1920x1080".split(",");
-      var random = Math.floor((Math.random() * imgUrls.length ));
-      if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
-        document.getElementById("originBg").src=imgUrls[random];
-      } else {
-        document.getElementById("originBg").src='/' + imgUrls[random];
-      }
-  }
-  bgDiv=document.getElementById("originBgDiv");
-  if(location.pathname.match('about')){
-    setAboutIMG();
-    bgDiv.style.display='block';
-  }else{
-    bgDiv.style.display='none';
-  }
-  </script>
 
 
 
@@ -178,8 +155,9 @@ var themeMenus = {};
     <div class="article-meta">
       
 	Posted on <a href="/2018/09/10/javaScript基础4/" class="article-date">
-	  <time datetime="2018-09-10T13:24:34.000Z" itemprop="datePublished">九月 10, 2018</time>
+	  <time datetime="2018-09-10T13:24:34.000Z" itemprop="datePublished">2018-09-10</time>
 	</a>
+
 
       
     </div>
@@ -256,8 +234,9 @@ pageX | Y兼容处理 : event.pageX | Y = event.pageX | Y || ...
     <div class="article-meta">
       
 	Posted on <a href="/2018/09/10/javaScript基础3/" class="article-date">
-	  <time datetime="2018-09-10T13:07:06.000Z" itemprop="datePublished">九月 10, 2018</time>
+	  <time datetime="2018-09-10T13:07:06.000Z" itemprop="datePublished">2018-09-10</time>
 	</a>
+
 
       
     </div>
@@ -335,8 +314,9 @@ var reg = new RegExp(“”);
     <div class="article-meta">
       
 	Posted on <a href="/2018/09/10/javaScript基础2/" class="article-date">
-	  <time datetime="2018-09-10T13:04:21.000Z" itemprop="datePublished">九月 10, 2018</time>
+	  <time datetime="2018-09-10T13:04:21.000Z" itemprop="datePublished">2018-09-10</time>
 	</a>
+
 
       
     </div>
@@ -415,8 +395,9 @@ document.head  (获取整个HEAD对象)
     <div class="article-meta">
       
 	Posted on <a href="/2018/09/10/javaScript基础1/" class="article-date">
-	  <time datetime="2018-09-10T12:24:00.000Z" itemprop="datePublished">九月 10, 2018</time>
+	  <time datetime="2018-09-10T12:24:00.000Z" itemprop="datePublished">2018-09-10</time>
 	</a>
+
 
       
     </div>
@@ -494,8 +475,9 @@ get / query / select：查询/获取
     <div class="article-meta">
       
 	Posted on <a href="/2018/09/09/hello-world/" class="article-date">
-	  <time datetime="2018-09-09T05:49:54.022Z" itemprop="datePublished">九月 9, 2018</time>
+	  <time datetime="2018-09-09T05:49:54.022Z" itemprop="datePublished">2018-09-09</time>
 	</a>
+
 
       
     </div>
@@ -649,7 +631,7 @@ Generate static files1$ hexo generat...
             
 
               <h6 style="margin: 0;"><a href="/2018/09/10/javaScript基础4/">javaScript基础4</a></h6>
-              <span>九月 10, 2018</span>
+              <span>2018-09-10</span>
             </div>
 
           </li>
@@ -661,7 +643,7 @@ Generate static files1$ hexo generat...
             
 
               <h6 style="margin: 0;"><a href="/2018/09/10/javaScript基础3/">javaScript基础3</a></h6>
-              <span>九月 10, 2018</span>
+              <span>2018-09-10</span>
             </div>
 
           </li>
@@ -673,7 +655,7 @@ Generate static files1$ hexo generat...
             
 
               <h6 style="margin: 0;"><a href="/2018/09/10/javaScript基础2/">javaScript基础2</a></h6>
-              <span>九月 10, 2018</span>
+              <span>2018-09-10</span>
             </div>
 
           </li>
@@ -685,7 +667,7 @@ Generate static files1$ hexo generat...
             
 
               <h6 style="margin: 0;"><a href="/2018/09/10/javaScript基础1/">javaScript基础1</a></h6>
-              <span>九月 10, 2018</span>
+              <span>2018-09-10</span>
             </div>
 
           </li>
@@ -697,7 +679,7 @@ Generate static files1$ hexo generat...
             
 
               <h6 style="margin: 0;"><a href="/2018/09/09/hello-world/">Hello World</a></h6>
-              <span>九月 9, 2018</span>
+              <span>2018-09-09</span>
             </div>
 
           </li>
@@ -705,6 +687,7 @@ Generate static files1$ hexo generat...
       </ul>
     </div>
   </div>
+
 
   
     
@@ -790,6 +773,8 @@ Generate static files1$ hexo generat...
     <a href="/categories" class="mobile-nav-link">Categories</a>
   
     <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
   
 </nav> -->
     

@@ -83,6 +83,8 @@ var themeMenus = {};
 
   themeMenus["/tags"] = "标签"; 
 
+  themeMenus["/about"] = "关于"; 
+
 </script>
 
 
@@ -95,7 +97,7 @@ var themeMenus = {};
 
           <h1 class="site-title">
             
-              <a href="/" title="欢迎来到初学者博客!" rel="home"> 奋斗的起点 </a>
+              <a href="/" title="欢迎来到初学者博客!" rel="home"> 不正常人类交流中心 </a>
             
           </h1>
 
@@ -116,6 +118,8 @@ var themeMenus = {};
                     
                       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">标签</a> </li>
                     
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">关于</a> </li>
+                    
               </ul>
             </div>
           </nav>
@@ -125,33 +129,6 @@ var themeMenus = {};
   </div>
 </header>
 
-
-  <div id="originBgDiv" style="background: #fff; width: 100%;">
-
-      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
-        <img id="originBg" width="100%" alt="" src="">
-      </div>
-
-  </div>
-
-  <script>
-  function setAboutIMG(){
-      var imgUrls = "css/images/pose.jpg,https://source.unsplash.com/collection/954550/1920x1080".split(",");
-      var random = Math.floor((Math.random() * imgUrls.length ));
-      if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
-        document.getElementById("originBg").src=imgUrls[random];
-      } else {
-        document.getElementById("originBg").src='/' + imgUrls[random];
-      }
-  }
-  bgDiv=document.getElementById("originBgDiv");
-  if(location.pathname.match('about')){
-    setAboutIMG();
-    bgDiv.style.display='block';
-  }else{
-    bgDiv.style.display='none';
-  }
-  </script>
 
 
 
@@ -177,21 +154,21 @@ var themeMenus = {};
             
                 <a href="#js基础" title="js基础" rel="4">js基础</a>
             
-                <a href="#DOM基础" title="DOM基础" rel="1">DOM基础</a>
-            
-                <a href="#元素属性设置" title="元素属性设置" rel="1">元素属性设置</a>
+                <a href="#控制台" title="控制台" rel="1">控制台</a>
             
                 <a href="#初始化文章" title="初始化文章" rel="1">初始化文章</a>
             
                 <a href="#hello world" title="hello world" rel="1">hello world</a>
             
-                <a href="#控制台" title="控制台" rel="1">控制台</a>
+                <a href="#DOM基础" title="DOM基础" rel="1">DOM基础</a>
             
-                <a href="#正则表达式" title="正则表达式" rel="1">正则表达式</a>
+                <a href="#元素属性设置" title="元素属性设置" rel="1">元素属性设置</a>
             
                 <a href="#事件基础" title="事件基础" rel="1">事件基础</a>
             
                 <a href="#二级事件绑定" title="二级事件绑定" rel="1">二级事件绑定</a>
+            
+                <a href="#正则表达式" title="正则表达式" rel="1">正则表达式</a>
             
         </div> 
         -->
@@ -210,7 +187,7 @@ var themeMenus = {};
     <header class="archive-article-header">
 
       <a href="/2018/09/10/javaScript基础2/" class="archive-article-date">
-		  <time datetime="2018-09-10T13:04:21.000Z" itemprop="datePublished">9月 10, 2018</time>
+		  <time datetime="2018-09-10T13:04:21.000Z" itemprop="datePublished">2018-09-10</time>
 	  </a>
       
   
@@ -222,6 +199,7 @@ var themeMenus = {};
     </header>
   </div>
 </article>
+
                     
                 
             </div>
@@ -238,7 +216,7 @@ var themeMenus = {};
     <header class="archive-article-header">
 
       <a href="/2018/09/09/hello-world/" class="archive-article-date">
-		  <time datetime="2018-09-09T05:49:54.022Z" itemprop="datePublished">9月 09, 2018</time>
+		  <time datetime="2018-09-09T05:49:54.022Z" itemprop="datePublished">2018-09-09</time>
 	  </a>
       
   
@@ -250,6 +228,7 @@ var themeMenus = {};
     </header>
   </div>
 </article>
+
                     
                 
             </div>
@@ -266,7 +245,7 @@ var themeMenus = {};
     <header class="archive-article-header">
 
       <a href="/2018/09/10/javaScript基础4/" class="archive-article-date">
-		  <time datetime="2018-09-10T13:24:34.000Z" itemprop="datePublished">9月 10, 2018</time>
+		  <time datetime="2018-09-10T13:24:34.000Z" itemprop="datePublished">2018-09-10</time>
 	  </a>
       
   
@@ -278,6 +257,7 @@ var themeMenus = {};
     </header>
   </div>
 </article>
+
                     
                 
                     <article class="archive-article archive-type-post">
@@ -285,7 +265,7 @@ var themeMenus = {};
     <header class="archive-article-header">
 
       <a href="/2018/09/10/javaScript基础3/" class="archive-article-date">
-		  <time datetime="2018-09-10T13:07:06.000Z" itemprop="datePublished">9月 10, 2018</time>
+		  <time datetime="2018-09-10T13:07:06.000Z" itemprop="datePublished">2018-09-10</time>
 	  </a>
       
   
@@ -297,6 +277,7 @@ var themeMenus = {};
     </header>
   </div>
 </article>
+
                     
                 
                     <article class="archive-article archive-type-post">
@@ -304,7 +285,7 @@ var themeMenus = {};
     <header class="archive-article-header">
 
       <a href="/2018/09/10/javaScript基础2/" class="archive-article-date">
-		  <time datetime="2018-09-10T13:04:21.000Z" itemprop="datePublished">9月 10, 2018</time>
+		  <time datetime="2018-09-10T13:04:21.000Z" itemprop="datePublished">2018-09-10</time>
 	  </a>
       
   
@@ -316,6 +297,7 @@ var themeMenus = {};
     </header>
   </div>
 </article>
+
                     
                 
                     <article class="archive-article archive-type-post">
@@ -323,7 +305,7 @@ var themeMenus = {};
     <header class="archive-article-header">
 
       <a href="/2018/09/10/javaScript基础1/" class="archive-article-date">
-		  <time datetime="2018-09-10T12:24:00.000Z" itemprop="datePublished">9月 10, 2018</time>
+		  <time datetime="2018-09-10T12:24:00.000Z" itemprop="datePublished">2018-09-10</time>
 	  </a>
       
   
@@ -335,6 +317,7 @@ var themeMenus = {};
     </header>
   </div>
 </article>
+
                     
                 
             </div>
@@ -351,7 +334,7 @@ var themeMenus = {};
     <header class="archive-article-header">
 
       <a href="/2018/09/10/javaScript基础4/" class="archive-article-date">
-		  <time datetime="2018-09-10T13:24:34.000Z" itemprop="datePublished">9月 10, 2018</time>
+		  <time datetime="2018-09-10T13:24:34.000Z" itemprop="datePublished">2018-09-10</time>
 	  </a>
       
   
@@ -363,6 +346,7 @@ var themeMenus = {};
     </header>
   </div>
 </article>
+
                     
                 
             </div>
@@ -379,7 +363,7 @@ var themeMenus = {};
     <header class="archive-article-header">
 
       <a href="/2018/09/10/javaScript基础4/" class="archive-article-date">
-		  <time datetime="2018-09-10T13:24:34.000Z" itemprop="datePublished">9月 10, 2018</time>
+		  <time datetime="2018-09-10T13:24:34.000Z" itemprop="datePublished">2018-09-10</time>
 	  </a>
       
   
@@ -391,6 +375,7 @@ var themeMenus = {};
     </header>
   </div>
 </article>
+
                     
                 
             </div>
@@ -407,7 +392,7 @@ var themeMenus = {};
     <header class="archive-article-header">
 
       <a href="/2018/09/10/javaScript基础2/" class="archive-article-date">
-		  <time datetime="2018-09-10T13:04:21.000Z" itemprop="datePublished">9月 10, 2018</time>
+		  <time datetime="2018-09-10T13:04:21.000Z" itemprop="datePublished">2018-09-10</time>
 	  </a>
       
   
@@ -419,6 +404,7 @@ var themeMenus = {};
     </header>
   </div>
 </article>
+
                     
                 
             </div>
@@ -435,7 +421,7 @@ var themeMenus = {};
     <header class="archive-article-header">
 
       <a href="/2018/09/09/hello-world/" class="archive-article-date">
-		  <time datetime="2018-09-09T05:49:54.022Z" itemprop="datePublished">9月 09, 2018</time>
+		  <time datetime="2018-09-09T05:49:54.022Z" itemprop="datePublished">2018-09-09</time>
 	  </a>
       
   
@@ -447,6 +433,7 @@ var themeMenus = {};
     </header>
   </div>
 </article>
+
                     
                 
             </div>
@@ -463,7 +450,7 @@ var themeMenus = {};
     <header class="archive-article-header">
 
       <a href="/2018/09/10/javaScript基础1/" class="archive-article-date">
-		  <time datetime="2018-09-10T12:24:00.000Z" itemprop="datePublished">9月 10, 2018</time>
+		  <time datetime="2018-09-10T12:24:00.000Z" itemprop="datePublished">2018-09-10</time>
 	  </a>
       
   
@@ -475,6 +462,7 @@ var themeMenus = {};
     </header>
   </div>
 </article>
+
                     
                 
             </div>
@@ -491,7 +479,7 @@ var themeMenus = {};
     <header class="archive-article-header">
 
       <a href="/2018/09/10/javaScript基础3/" class="archive-article-date">
-		  <time datetime="2018-09-10T13:07:06.000Z" itemprop="datePublished">9月 10, 2018</time>
+		  <time datetime="2018-09-10T13:07:06.000Z" itemprop="datePublished">2018-09-10</time>
 	  </a>
       
   
@@ -503,6 +491,7 @@ var themeMenus = {};
     </header>
   </div>
 </article>
+
                     
                 
             </div>
@@ -615,7 +604,7 @@ var themeMenus = {};
             
 
               <h6 style="margin: 0;"><a href="/2018/09/10/javaScript基础4/">javaScript基础4</a></h6>
-              <span>九月 10, 2018</span>
+              <span>2018-09-10</span>
             </div>
 
           </li>
@@ -627,7 +616,7 @@ var themeMenus = {};
             
 
               <h6 style="margin: 0;"><a href="/2018/09/10/javaScript基础3/">javaScript基础3</a></h6>
-              <span>九月 10, 2018</span>
+              <span>2018-09-10</span>
             </div>
 
           </li>
@@ -639,7 +628,7 @@ var themeMenus = {};
             
 
               <h6 style="margin: 0;"><a href="/2018/09/10/javaScript基础2/">javaScript基础2</a></h6>
-              <span>九月 10, 2018</span>
+              <span>2018-09-10</span>
             </div>
 
           </li>
@@ -651,7 +640,7 @@ var themeMenus = {};
             
 
               <h6 style="margin: 0;"><a href="/2018/09/10/javaScript基础1/">javaScript基础1</a></h6>
-              <span>九月 10, 2018</span>
+              <span>2018-09-10</span>
             </div>
 
           </li>
@@ -663,7 +652,7 @@ var themeMenus = {};
             
 
               <h6 style="margin: 0;"><a href="/2018/09/09/hello-world/">Hello World</a></h6>
-              <span>九月 9, 2018</span>
+              <span>2018-09-09</span>
             </div>
 
           </li>
@@ -671,6 +660,7 @@ var themeMenus = {};
       </ul>
     </div>
   </div>
+
 
   
     
@@ -756,6 +746,8 @@ var themeMenus = {};
     <a href="/categories" class="mobile-nav-link">Categories</a>
   
     <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
   
 </nav> -->
     

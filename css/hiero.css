@@ -13,10 +13,11 @@ Tags: black, white, red, two-columns, fixed-layout, threaded-comments, full-widt
 
 /* Global
 ----------------------------------------------- */
+@import "https://at.alicdn.com/t/font_829625_gr69ot4j5j.css"
 body {
 	color: #333;
 	font-weight: 400;
-	font-family: Arial, Helvetica, Microsoft Yahei;
+	font-family: '微软雅黑';
 	line-height: 1.8;
 	background: #fff;
 	}
@@ -26,7 +27,7 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 1.25em 0 .5em;
 	color: #222;
 	font-weight: normal;
-	font-family: "Yanone Kaffeesatz", "Microsoft YaHei Light", Arial, Helvetica, sans-serif;
+	font-family: '微软雅黑',sans-serif;
 	line-height: 1.2em;
 	}
 h1 {
@@ -901,7 +902,7 @@ body.search .page .entry-footer {
 	padding: 5px 15px;
 	color: #999;
 	font-size: 1.3em;
-	font-family: "Yanone Kaffeesatz", "方正姚体", Arial, Helvetica, sans-serif;
+	font-family: '微软雅黑', Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	line-height: 30px;

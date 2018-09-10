@@ -82,8 +82,6 @@ var themeMenus = {};
 
   themeMenus["/tags"] = "标签"; 
 
-  themeMenus["/about"] = "关于"; 
-
 </script>
 
 
@@ -116,8 +114,6 @@ var themeMenus = {};
                       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">分类</a> </li>
                     
                       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">标签</a> </li>
-                    
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">关于</a> </li>
                     
               </ul>
             </div>
@@ -164,6 +160,322 @@ var themeMenus = {};
       <div id="content" class="outer">
         
           <section id="main">
+  
+    <article id="post-javaScript基础4"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/09/10/javaScript基础4/">javaScript基础4</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/09/10/javaScript基础4/" class="article-date">
+	  <time datetime="2018-09-10T13:24:34.000Z" itemprop="datePublished">九月 10, 2018</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+
+          
+            <div class="entry-summary" style="margin-left:0;">
+            本篇是JavaScript基础第四篇章，这是js基础的最后一个篇章，主要讲述事件的基础以及事件的传播机制，DOM二级事件绑定
+
+文中出现的html代码样式请自行设置
+
+事件非常用事件
+onmousewheel (鼠标滚轮滚动行为)
+
+onresize (window.onresize浏览器窗口大小改变事件)
+
+onunload (浏览器关闭事件)
+
+
+鼠标事件
+原型链: MouseEvent –&gt; UIEevent –&gt; Event –&gt; Object
+
+MouseEvent 记录的是页面中唯一一个鼠标每一次触发时候的相关信息,和到底在哪个元素上触发的没有关系
+
+pageX | Y兼容处理 : event.pageX | Y = event.pageX | Y || ...
+          
+
+        
+          <p class="article-more-link">
+            <a href="/2018/09/10/javaScript基础4/#more">阅读全文</a>
+          </p>
+        </div>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js基础/">js基础</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/事件基础/">事件基础</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二级事件绑定/">二级事件绑定</a></li></ul>
+
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+
+  
+    <article id="post-javaScript基础3"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/09/10/javaScript基础3/">javaScript基础3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/09/10/javaScript基础3/" class="article-date">
+	  <time datetime="2018-09-10T13:07:06.000Z" itemprop="datePublished">九月 10, 2018</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+
+          
+            <div class="entry-summary" style="margin-left:0;">
+            本篇是JavaScript基础第三篇章，本章介绍正则的相关知识，详细介绍了正则的特性和应用
+正则正则含义
+他就是一个规则,用来处理字符串的一个规则(正则就是用来处理字符串)
+
+创建正则
+字面量方式: 
+
+var reg = /\d/;
+
+
+实例创建方式:
+
+var reg = new RegExp(“”);
+
+
+正则两种创建方式是有区别的
+
+在字面量方式中 , //之间包起来的所有 内容都是元字符,有的具有特殊的意义,大部分都是代表本身含义的普通元字符
+12345678910var name = 'gu'var reg = /^\d+"+name+"\d+$/;//并不是字符串拼接console.log(reg.test('200gu222')) //-&gt;flaseconsole...
+          
+
+        
+          <p class="article-more-link">
+            <a href="/2018/09/10/javaScript基础3/#more">阅读全文</a>
+          </p>
+        </div>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js基础/">js基础</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
+
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+
+  
+    <article id="post-javaScript基础2"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/09/10/javaScript基础2/">javaScript基础2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/09/10/javaScript基础2/" class="article-date">
+	  <time datetime="2018-09-10T13:04:21.000Z" itemprop="datePublished">九月 10, 2018</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+
+          
+            <div class="entry-summary" style="margin-left:0;">
+            本篇是JavaScript基础第二篇章，主要介绍DOM的相关操作和元素属性值设置
+
+注：文中的[context]表示元素对象
+
+DOM元素获取方法
+document.getElementById   (一个元素对象)
+
+[context].getElementsByTagName (元素集合)
+
+[context].getElementsByClassName (元素集合)
+
+document.getElementsByName  (节点集合[NodeList])
+
+document.documentElement (获取整个HTML对象)
+
+document.body  (获取整个BODY对象)
+
+document.head  (获取整个HEAD对象)
+
+[context].quer...
+          
+
+        
+          <p class="article-more-link">
+            <a href="/2018/09/10/javaScript基础2/#more">阅读全文</a>
+          </p>
+        </div>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM基础/">DOM基础</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js基础/">js基础</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/元素属性设置/">元素属性设置</a></li></ul>
+
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+
+  
+    <article id="post-javaScript基础1"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/09/10/javaScript基础1/">javaScript基础1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/09/10/javaScript基础1/" class="article-date">
+	  <time datetime="2018-09-10T12:24:00.000Z" itemprop="datePublished">九月 10, 2018</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+
+          
+            <div class="entry-summary" style="margin-left:0;">
+            本篇是JavaScript基础第一篇章，主要是查漏一些基础内容和平时可能不注意的地方, 有问题可在下方留言
+基础弹出框
+弹出框的内容最后都会被转换为字符串输出(调用toString这个方法)1alert(1 + 1);//=&gt;"2";
+
+
+控制台
+console.dir()：比console.log()更加详细
+console.table()：将json以表格形式展现出来
+
+命名规范
+常用简写
+info：information 信息
+init：initialization 初始化
+add / insert / create：增加/创建/插入
+remove / rm / clear / del / delete：删除
+get / query / select：查询/获取
+
+
+常规规...
+          
+
+        
+          <p class="article-more-link">
+            <a href="/2018/09/10/javaScript基础1/#more">阅读全文</a>
+          </p>
+        </div>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js基础/">js基础</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/控制台/">控制台</a></li></ul>
+
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+
   
     <article id="post-hello-world"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
@@ -336,6 +648,54 @@ Generate static files1$ hexo generat...
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2018/09/10/javaScript基础4/">javaScript基础4</a></h6>
+              <span>九月 10, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/09/10/javaScript基础3/">javaScript基础3</a></h6>
+              <span>九月 10, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/09/10/javaScript基础2/">javaScript基础2</a></h6>
+              <span>九月 10, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/09/10/javaScript基础1/">javaScript基础1</a></h6>
+              <span>九月 10, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2018/09/09/hello-world/">Hello World</a></h6>
               <span>九月 9, 2018</span>
             </div>
@@ -351,7 +711,7 @@ Generate static files1$ hexo generat...
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/text/">text</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/text/">text</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -361,7 +721,7 @@ Generate static files1$ hexo generat...
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hello-world/">hello world</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/初始化文章/">初始化文章</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM基础/">DOM基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hello-world/">hello world</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js基础/">js基础</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/事件基础/">事件基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二级事件绑定/">二级事件绑定</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/元素属性设置/">元素属性设置</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/初始化文章/">初始化文章</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/控制台/">控制台</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -371,7 +731,7 @@ Generate static files1$ hexo generat...
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/初始化文章/" style="font-size: 10px;">初始化文章</a>
+      <a href="/tags/DOM基础/" style="font-size: 10px;">DOM基础</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/js基础/" style="font-size: 20px;">js基础</a> <a href="/tags/事件基础/" style="font-size: 10px;">事件基础</a> <a href="/tags/二级事件绑定/" style="font-size: 10px;">二级事件绑定</a> <a href="/tags/元素属性设置/" style="font-size: 10px;">元素属性设置</a> <a href="/tags/初始化文章/" style="font-size: 10px;">初始化文章</a> <a href="/tags/控制台/" style="font-size: 10px;">控制台</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a>
     </div>
   </div>
 
@@ -381,7 +741,7 @@ Generate static files1$ hexo generat...
     <h3 class="widget-title">归档</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">5</span></li></ul>
     </div>
   </div>
 
@@ -430,8 +790,6 @@ Generate static files1$ hexo generat...
     <a href="/categories" class="mobile-nav-link">Categories</a>
   
     <a href="/tags" class="mobile-nav-link">Tags</a>
-  
-    <a href="/about" class="mobile-nav-link">About</a>
   
 </nav> -->
     

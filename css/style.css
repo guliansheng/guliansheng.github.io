@@ -431,7 +431,7 @@ body {
   font-weight: normal;
 }
 .article-date:hover {
-  color: #ff2828;
+  color: #fb6d19;
 }
 .article-category {
   text-align: center;
@@ -453,7 +453,7 @@ body {
   color: #333;
 }
 .article-category-link:hover {
-  color: #ff2828;
+  color: #fb6d19;
 }
 .article-header h1 {
   margin: 0 0 3px 0;
@@ -475,7 +475,7 @@ body {
   transition: color 0.2s;
 }
 a.article-title:hover {
-  color: #ff2828;
+  color: #fb6d19;
   text-decoration: none;
 }
 .article-entry {
@@ -517,7 +517,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 .article-entry a:hover {
-  color: #ff2828;
+  color: #fb6d19;
   text-decoration: none;
 }
 .article-entry ul,
@@ -967,7 +967,7 @@ a.article-title:hover {
   background-color: transparent !important;
 }
 .nav .active > a {
-  color: #ff2828;
+  color: #fb6d19;
 }
 .nav-link {
   font-family: "futura-pt", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", Microsoft JhengHei, WenQuanYi Micro Hei, "Microsoft YaHei", sans-serif;
@@ -975,7 +975,7 @@ a.article-title:hover {
   padding: 1px !important;
 }
 .nav-link:hover {
-  color: #ff2828;
+  color: #fb6d19;
 }
 .nav-child {
   margin-left: 1em;
@@ -1022,7 +1022,7 @@ a.article-title:hover {
   font-weight: bold;
   color: #16171b;
   text-align: center;
-  border-left: 0px solid #ff2828;
+  border-left: 0px solid #fb6d19;
   background: rgba(208,211,248,0.15);
 }
 .archives-tags-wrap blockquote a {
@@ -1030,7 +1030,7 @@ a.article-title:hover {
   margin: 0.2em;
 }
 .archives-tags-wrap blockquote a:hover {
-  color: #ff2828;
+  color: #fb6d19;
 }
 .archive-tag {
   text-transform: none;
@@ -1049,9 +1049,9 @@ a.article-title:hover {
   font-size: 1.1em;
   font-weight: bold;
   line-height: 1.7em;
-  color: #ff2828;
+  color: #fb6d19;
   text-align: left;
-  border-left: 0px solid #ff2828;
+  border-left: 0px solid #fb6d19;
   background: rgba(208,211,248,0.15);
 }
 .archives-category-wrap blockquote a {
@@ -1059,7 +1059,7 @@ a.article-title:hover {
   margin: 0.2em;
 }
 .archives-category-wrap blockquote a:hover {
-  color: #ff2828;
+  color: #fb6d19;
 }
 .archives-category-wrap blockquote a:before {
   font-family: "FontAwesome";
@@ -1120,7 +1120,7 @@ a.article-title:hover {
   padding-left: 15px;
 }
 .archive-article-title:hover {
-  color: #ff2828;
+  color: #fb6d19;
 }
 .archive-article-footer {
   margin-top: 1em;
@@ -1137,7 +1137,7 @@ a.article-title:hover {
   font-family: "futura-pt", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", Microsoft JhengHei, WenQuanYi Micro Hei, "Microsoft YaHei", sans-serif;
 }
 .archive-article-date:hover {
-  color: #ff2828;
+  color: #fb6d19;
 }
 #page-nav {
   margin: 50px auto;
@@ -1165,7 +1165,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 #page-nav a:hover {
-  background: #ff2828;
+  background: #fb6d19;
   color: #fff;
 }
 #page-nav .prev {
@@ -1565,6 +1565,7 @@ pre .javascript .function {
 .ins-section .ins-search-item.active .ins-search-preview {
   color: #fff;
 }
+@import "https://at.alicdn.com/t/font_829625_gr69ot4j5j.css";
 #sidebar {
   padding-left: 12px;
 }
@@ -1600,7 +1601,7 @@ pre .javascript .function {
   text-decoration: none;
 }
 .widget a:hover {
-  color: #ff2828;
+  color: #fb6d19;
   text-decoration: none;
 }
 .widget ul ul,

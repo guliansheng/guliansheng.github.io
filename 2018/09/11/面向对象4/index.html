@@ -13,7 +13,7 @@
   <!-- PACE Progress Bar START -->
 
   
-  <title>javascript基础1 | 欢迎来到初学者博客!</title>
+  <title>面向对象4 | 欢迎来到初学者博客!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="博客,html5,css3,javaScript,js,es6,jQuery,bootstrap,vue,webpack,hexo,guliansheng,初学者,网站,基础,前端学习,前端框架,前端知识总结" />
@@ -21,18 +21,18 @@
   
   
   
-  <meta name="description" content="本篇是JavaScript基础第一节，主要是查漏一些基础内容和平时可能不注意的地方, 有问题可在下方留言">
-<meta name="keywords" content="js基础,控制台">
+  <meta name="description" content="本篇章讲述的是js中的面向对象编程，第四节主要介绍函数的几种形式和类数组的概念">
+<meta name="keywords" content="面向对象,函数,类数组">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javaScript基础1">
-<meta property="og:url" content="http://yoursite.com/2018/09/10/javaScript基础1/index.html">
+<meta property="og:title" content="面向对象4">
+<meta property="og:url" content="http://yoursite.com/2018/09/11/面向对象4/index.html">
 <meta property="og:site_name" content="欢迎来到初学者博客!">
-<meta property="og:description" content="本篇是JavaScript基础第一节，主要是查漏一些基础内容和平时可能不注意的地方, 有问题可在下方留言">
+<meta property="og:description" content="本篇章讲述的是js中的面向对象编程，第四节主要介绍函数的几种形式和类数组的概念">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-11T02:38:10.961Z">
+<meta property="og:updated_time" content="2018-09-11T03:13:11.095Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javaScript基础1">
-<meta name="twitter:description" content="本篇是JavaScript基础第一节，主要是查漏一些基础内容和平时可能不注意的地方, 有问题可在下方留言">
+<meta name="twitter:title" content="面向对象4">
+<meta name="twitter:description" content="本篇章讲述的是js中的面向对象编程，第四节主要介绍函数的几种形式和类数组的概念">
   
     <link rel="alternate" href="/atom.xml" title="欢迎来到初学者博客!" type="application/atom+xml">
   
@@ -141,7 +141,7 @@ var themeMenus = {};
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-javaScript基础1" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-面向对象4" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -149,7 +149,7 @@ var themeMenus = {};
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      javaScript基础1
+      面向对象4
     </h1>
   
 
@@ -157,8 +157,8 @@ var themeMenus = {};
     
     <div class="article-meta">
       
-	Posted on <a href="/2018/09/10/javaScript基础1/" class="article-date">
-	  <time datetime="2018-09-10T12:24:00.000Z" itemprop="datePublished">2018-09-10</time>
+	Posted on <a href="/2018/09/11/面向对象4/" class="article-date">
+	  <time datetime="2018-09-11T02:54:50.000Z" itemprop="datePublished">2018-09-11</time>
 	</a>
 
 
@@ -170,57 +170,57 @@ var themeMenus = {};
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本篇是JavaScript基础第一节，主要是查漏一些基础内容和平时可能不注意的地方, 有问题可在下方留言<br><a id="more"></a></p>
-<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="弹出框"><a href="#弹出框" class="headerlink" title="弹出框"></a>弹出框</h3><ul>
-<li>弹出框的内容最后都会被转换为字符串输出(调用toString这个方法)<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="number">1</span> + <span class="number">1</span>);<span class="comment">//=&gt;"2";</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="控制台"><a href="#控制台" class="headerlink" title="控制台"></a>控制台</h3><ul>
-<li>console.dir()：比console.log()更加详细</li>
-<li>console.table()：将json以表格形式展现出来</li>
-</ul>
-<h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h3><ul>
-<li>常用简写<ul>
-<li>info：information 信息</li>
-<li>init：initialization 初始化</li>
-<li>add / insert / create：增加/创建/插入</li>
-<li>remove / rm / clear / del / delete：删除</li>
-<li>get / query / select：查询/获取</li>
-</ul>
-</li>
-<li>常规规范<ul>
-<li>var _XXX：一般以下划线开头的代表变量是一个全局或者公用的变量</li>
-<li>JS中很多的词都是有特殊含义的，我们这些词叫做关键字；现在没有特殊含义，以后可能会作为关键词的，我们叫做保留字；而关键字和保留字都不可以随便用来命名</li>
-</ul>
-</li>
-</ul>
-<h3 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h3><ul>
-<li><p>‘==’ 两边</p>
+        <p>本篇章讲述的是js中的面向对象编程，第四节主要介绍函数的几种形式和类数组的概念<br><a id="more"></a></p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="函数的属性"><a href="#函数的属性" class="headerlink" title="函数的属性"></a>函数的属性</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>)</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>两个等于号比较，左右两边数据值的类型不一样，浏览器会把两边的类型使用Number()方法都转换为数字然后再比较，但是null和undefined除外</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">null</span> == <span class="literal">undefined</span>  <span class="comment">//=&gt; true</span></span><br><span class="line"><span class="literal">null</span> === <span class="literal">undefined</span> <span class="comment">//=&gt; false </span></span><br><span class="line"><span class="literal">null</span> == <span class="number">0</span> <span class="comment">//=&gt;false  null和undefined和其他任何值都不相等</span></span><br></pre></td></tr></table></figure>
+<li><p>length  形参的个数</p>
 </li>
-<li><p>等号两边类型相同,进行 ‘===’ 比较</p>
+<li><p>name “Fn” 函数名</p>
+</li>
+<li><p>prototype  类的原型,在原型上定义的方法都是当前”Fn”这个类实例的公有方法</p>
+</li>
+<li><p><strong>proto</strong>  把函数当做一个普通对象,指向Function这个类的原型</p>
 </li>
 </ul>
+<h3 id="函数的三个角色"><a href="#函数的三个角色" class="headerlink" title="函数的三个角色"></a>函数的三个角色</h3><ul>
+<li><p>普通函数 : 它本身就是一个普通的函数，执行的时候形成私有的作用域（闭包），形参赋值，预解释，代码执行，执行完成后栈内存销毁/不销毁了</p>
+</li>
+<li><p>类 ：它有自己的实例，也有一个叫做prototype属性是自己的原型，它的实例都可以指向自己的原型</p>
+</li>
+<li><p>普通对象 ：和var obj=()中的obj一样，就是一个普通的对象，它作为对象可以有一些自己的私有的属性，也可以通过<strong>proto</strong> 找到Function.prototype</p>
 </li>
 </ul>
-<h3 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h3><ul>
-<li>random 获取[n,m]之间的随机整数</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> num = <span class="number">500</span>;</span><br><span class="line">    <span class="keyword">this</span>.x = <span class="number">100</span>;</span><br><span class="line">&#125;</span><br><span class="line">Fn.prototype.getX = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.x);</span><br><span class="line">&#125;</span><br><span class="line">Fn.aaa = <span class="number">1000</span>;</span><br><span class="line"><span class="keyword">var</span> f = <span class="keyword">new</span> Fn;</span><br><span class="line"><span class="built_in">console</span>.log(f.num);</span><br><span class="line"><span class="built_in">console</span>.log(f.aaa);</span><br><span class="line"><span class="keyword">var</span> res = Fn();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Function.prototype是函数类型的值,但是相关操作和之前一模一样,是一个密名函数</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.round(<span class="built_in">Math</span>.random()*(m-n)+n)</span><br></pre></td></tr></table></figure>
-<h3 id="括号表达式"><a href="#括号表达式" class="headerlink" title="括号表达式"></a>括号表达式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> json = &#123;<span class="attr">name</span>:<span class="string">'gu'</span>,<span class="attr">fn</span>:fn2&#125;;</span><br><span class="line">;(fn1,fn2)() <span class="comment">//括号表达式中每一项用","隔开，最后只能获取到最后一项</span></span><br><span class="line">;(fn1,json.fn)() <span class="comment">//这里只是将json.fn指向的fn2函数直接拿过来使用，所以this还是指向window</span></span><br><span class="line">;(json.fn)() <span class="comment">//只有一项时，this还是指向json</span></span><br></pre></td></tr></table></figure>
+<h2 id="类数组"><a href="#类数组" class="headerlink" title="类数组"></a>类数组</h2><h3 id="类数组集合"><a href="#类数组集合" class="headerlink" title="类数组集合"></a>类数组集合</h3><ul>
+<li><p>arguments</p>
+</li>
+<li><p>HTMLCollection</p>
+</li>
+<li><p>NodeList</p>
+</li>
+</ul>
+<h3 id="类数组转数组"><a href="#类数组转数组" class="headerlink" title="类数组转数组"></a>类数组转数组</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ary = <span class="built_in">Array</span>.prototype.slice.call(obj)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>元素集合(HTMLCollection)和节点集合(NodeList),在ie6~8中不支持借用数组方法</p>
+</li>
+<li><p>arguments没有兼容性问题,在ie6~8中可以借用数组方法</p>
+</li>
+</ul>
+<h3 id="使用try-catch编写兼容代码"><a href="#使用try-catch编写兼容代码" class="headerlink" title="使用try-catch编写兼容代码"></a>使用try-catch编写兼容代码</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> utils=&#123;</span><br><span class="line">    listToArray:<span class="function"><span class="keyword">function</span>(<span class="params">likeAry</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> ary=[];</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            ary=<span class="built_in">Array</span>.prototype.slice.call(likeAry);</span><br><span class="line">        &#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;likeAry.length;i++)&#123;</span><br><span class="line">                ary[ary.length]=likeAry[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ary;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="entry-meta entry-footer">
       
 	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    <a class="article-category-link" href="/categories/js面向对象/">js面向对象</a>
 
       
   <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js基础/">js基础</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/控制台/">控制台</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数/">函数</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/类数组/">类数组</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
 
       
         <div id="donation_div"></div>
@@ -268,19 +268,10 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2018/09/10/javaScript基础2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          javaScript基础2
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/09/09/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/09/11/面向对象3/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">面向对象3</div>
     </a>
   
 </nav>
@@ -294,7 +285,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     
-      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-number">1.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#弹出框"><span class="nav-number">1.1.</span> <span class="nav-text">弹出框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制台"><span class="nav-number">1.2.</span> <span class="nav-text">控制台</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命名规范"><span class="nav-number">1.3.</span> <span class="nav-text">命名规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型转换"><span class="nav-number">1.4.</span> <span class="nav-text">数据类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Math"><span class="nav-number">1.5.</span> <span class="nav-text">Math</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#括号表达式"><span class="nav-number">1.6.</span> <span class="nav-text">括号表达式</span></a></li></ol></li></ol>
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">1.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数的属性"><span class="nav-number">1.1.</span> <span class="nav-text">函数的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数的三个角色"><span class="nav-number">1.2.</span> <span class="nav-text">函数的三个角色</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类数组"><span class="nav-number">2.</span> <span class="nav-text">类数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类数组集合"><span class="nav-number">2.1.</span> <span class="nav-text">类数组集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类数组转数组"><span class="nav-number">2.2.</span> <span class="nav-text">类数组转数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用try-catch编写兼容代码"><span class="nav-number">2.3.</span> <span class="nav-text">使用try-catch编写兼容代码</span></a></li></ol></li></ol>
     
     </div>
   </aside>

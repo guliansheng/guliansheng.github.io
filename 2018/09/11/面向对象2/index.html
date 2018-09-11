@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- PACE Progress Bar START -->
+  
+    <script src="/js/pace.min.js"></script>
+    <link rel="stylesheet" href="https://github.com/HubSpot/pace/raw/master/themes/orange/pace-theme-flash.css">
+  
+  
+
+  <!-- PACE Progress Bar START -->
+
+  
+  <title>面向对象2 | 欢迎来到初学者博客!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="博客,html5,css3,javaScript,js,es6,jQuery,bootstrap,vue,webpack,hexo,guliansheng,初学者,网站,基础,前端学习,前端框架,前端知识总结" />
+  
+  
+  
+  
+  <meta name="description" content="本篇章讲述的是js中的面向对象编程，第二节主要介绍原型链和原型链中的查找机制">
+<meta name="keywords" content="面向对象,原型链,原型链的查找机制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象2">
+<meta property="og:url" content="http://yoursite.com/2018/09/11/面向对象2/index.html">
+<meta property="og:site_name" content="欢迎来到初学者博客!">
+<meta property="og:description" content="本篇章讲述的是js中的面向对象编程，第二节主要介绍原型链和原型链中的查找机制">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.guliansheng.club/img/blog/Object/函数和对象原型链.png">
+<meta property="og:updated_time" content="2018-09-11T03:12:52.771Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面向对象2">
+<meta name="twitter:description" content="本篇章讲述的是js中的面向对象编程，第二节主要介绍原型链和原型链中的查找机制">
+<meta name="twitter:image" content="http://www.guliansheng.club/img/blog/Object/函数和对象原型链.png">
+  
+    <link rel="alternate" href="/atom.xml" title="欢迎来到初学者博客!" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/my.css">
+  <!-- Google Adsense -->
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-0123456789ABCDEF",
+          enable_page_level_ads: true
+      });
+  </script>
+  
+</head>
+
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "首页"; 
+
+  themeMenus["/archives"] = "归档"; 
+
+  themeMenus["/categories"] = "分类"; 
+
+  themeMenus["/tags"] = "标签"; 
+
+  themeMenus["/about"] = "关于"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  <header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="欢迎来到初学者博客!" rel="home"> 不正常人类交流中心 </a>
+            
+          </h1>
+
+          
+
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+          <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+            <div class="clearfix sf-menu">
+
+              <ul id="main-nav" class="nmenu sf-js-enabled">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">首页</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">归档</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">分类</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">标签</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">关于</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+
+      </div>
+  </div>
+</header>
+
+
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-面向对象2" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      面向对象2
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/09/11/面向对象2/" class="article-date">
+	  <time datetime="2018-09-11T02:32:47.000Z" itemprop="datePublished">2018-09-11</time>
+	</a>
+
+
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本篇章讲述的是js中的面向对象编程，第二节主要介绍原型链和原型链中的查找机制<br><a id="more"></a></p>
+<h2 id="原型链和原型链的查找机制"><a href="#原型链和原型链的查找机制" class="headerlink" title="原型链和原型链的查找机制"></a>原型链和原型链的查找机制</h2><h3 id="函数和对象"><a href="#函数和对象" class="headerlink" title="函数和对象"></a>函数和对象</h3><ul>
+<li>【函数】<ul>
+<li>普通函数、类（所有的类：内置类(Array…)、自己创建的类）</li>
+</ul>
+</li>
+<li>【对象】<ul>
+<li>普通对象、数组、正则、Math、arguments…</li>
+<li>实例是对象类型的（除了基本类到的字面量创建的值）</li>
+<li>prototype的值也是对象类型的</li>
+<li>函数也是对象类型的</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="基本数据类型-值类型"><a href="#基本数据类型-值类型" class="headerlink" title="基本数据类型(值类型)"></a>基本数据类型(值类型)</h4><ul>
+<li><p>number: 数字</p>
+<ul>
+<li><p>除了常规的数字, 还有NaN</p>
+</li>
+<li><p>NaN</p>
+<ul>
+<li>not a number: 不是一个数,但是属于number类型</li>
+<li>NaN == NaN //=&gt;false , NaN和其他任何值都不相等</li>
+<li>isNaN(): 检测值是否为有效数字, 如果不是返回true, 是有效数字返回false, 同时在检测时值如果不是number, 会将值转换为number类型再进行检测<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'12'</span>) <span class="comment">//=&gt;false</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>string: 字符串</p>
+</li>
+<li><p>boolean: 布尔</p>
+<ul>
+<li>Boolean()方法, 只有0,NaN,空字符串, null, undefined这五个数据值转换为布尔类型的时候为false, 其余都是true;</li>
+<li>可以直接用!!代替Boolean()来使用;</li>
+</ul>
+</li>
+<li><p>null: 空对象指针</p>
+<ul>
+<li>null用typeof返回的是Object</li>
+</ul>
+</li>
+<li><p>undefined: 未定义</p>
+</li>
+<li><p>引用数据类型</p>
+<ul>
+<li><p>object: 对象</p>
+<ul>
+<li><p>{}: 普通对象</p>
+<ul>
+<li>删除属性值<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">obj.xxx = <span class="literal">null</span>; <span class="comment">//=&gt;假删除(让其属性值为null,,但是属性还在对象中)</span></span><br><span class="line"><span class="keyword">delete</span> obj.xxx; <span class="comment">//=&gt;真删除(把整个属性都在对象中暴力移除)</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>[]: 数组</p>
+</li>
+<li>/^$/: 正则</li>
+<li>…</li>
+</ul>
+</li>
+<li>function: 函数数据类型<ul>
+<li>普通函数</li>
+<li>类(内置类, 自己创建的类)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>数据类型检测</p>
+<ul>
+<li><p>typeof: 检测数据类型的运算符</p>
+<ul>
+<li><p>作用: 返回一个字符串, 内容证明值时属于什么类型的</p>
+</li>
+<li><p>局限: 无法将对象类型的中的数据类型进行细分  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="keyword">typeof</span> [] <span class="comment">//=&gt;"string"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125; <span class="comment">//=&gt;"function"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="number">234</span> <span class="comment">// =&gt; "number"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="string">'基地搜'</span> <span class="comment">// =&gt; "string"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span> <span class="comment">//=&gt;"undefined"</span></span><br><span class="line"><span class="keyword">typeof</span> &#123;&#125; <span class="comment">// =&gt; "object"</span></span><br><span class="line"><span class="keyword">typeof</span> [] <span class="comment">// =&gt; "object"</span></span><br><span class="line"><span class="keyword">typeof</span> /^$/ <span class="comment">// =&gt; "object"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span> <span class="comment">// =&gt; "object"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>instanceof: 检测某个实例是否属于这个类</p>
+<ul>
+<li>局限: 用字面量方式创建的基本数据类型用instanceof检测都为false, 只能用于new创建的基本数据类型检测</li>
+</ul>
+</li>
+<li><p>constructor: 获取当前实例的构造器</p>
+<ul>
+<li><p>作用: 可以处理基本数据类型</p>
+</li>
+<li><p>局限: 我们可以把类的原型进行重写, 在重写的时候可能出现把之前的constructor给覆盖了, 这样检测出来的结构就是不正确的</p>
+</li>
+</ul>
+</li>
+<li><p>Object.prototype.toString.call(): 获取当前实例的所属类信息</p>
+<ul>
+<li><p>可以写成({}).toString.call()</p>
+</li>
+<li><p>最准确最常用的方式</p>
+</li>
+<li><p>作用 : 返回当前方法执行的主体(方法中this)所属类的详细信息,所有数据类型都可以检测,包括null和undefined</p>
+<blockquote>
+<p>toString():不仅仅是转换为字符串</p>
+<p>1.Number类型的toString(2/10/8)方法,可以将数字转化成字符串,并且可以改变进制 </p>
+<p>2.Boolean类型转化为字符串就是将true/false转化为字符串</p>
+<p>3.Array类型,RegExp类型,Data类型,Function类型可以直接转化为字符串</p>
+<p>4.null和undefined没有toString方法</p>
+<p>5.Math.toString() // =&gt;  “[object Math]”,因为Math自身没有toString方法,这里是使用Object.prototype上的公有方法toString</p>
+<p>6.对象数据类型 : ({}).toString()  // =&gt; “[object Object]”,原理同上</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="原型属性-prototype"><a href="#原型属性-prototype" class="headerlink" title="原型属性:prototype"></a>原型属性:prototype</h3><ul>
+<li><p>所有函数数据类型都有的自带属性</p>
+</li>
+<li><p>这个属性值是一个对象,浏览器会默认给他开辟一个堆内存</p>
+</li>
+<li><p>在浏览器给prototype开辟的堆内存中有一个天生自带的属性:constructor,这个属性存储的值是当前函数本身</p>
+</li>
+<li><p>每一个对象都有一个<strong>proto</strong>的属性,这个属性指向当前实例所属类的prototype(如果不能确定他是谁的实例,都是Object的实例)</p>
+</li>
+<li><p>每一个类都把供实例调取的公共属性方法，存储到自己的原型上（原型prototype的作用就是存储一些公共的属性和方法，供它的实例调取使用）</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CreateUsPerson.prototype.writeJs=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"my name is"</span>+<span class="keyword">this</span>.name+<span class="string">"，i can write is 啦！！"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p1=<span class="keyword">new</span> CreateJsPerson(<span class="string">"尹华芝"</span>,<span class="number">18</span>);</span><br><span class="line"><span class="keyword">var</span> p2=<span class="keyword">new</span> CreateUsPerson(<span class="string">"王小波"</span>,<span class="number">48</span>);</span><br><span class="line"><span class="built_in">console</span>.log(pl.writeJs === p2.writeJs);<span class="comment">//-&gt;true,公有属性是相同的</span></span><br></pre></td></tr></table></figure>
+<h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><ul>
+<li><p>它是一种基于<strong>proto</strong>(隐式原型)向上查找的机制。当我们操作实例的某个属性或者方法的时候,首先找自己空间中私有的属性或者方法</p>
+<ul>
+<li><p>找到了，则结束查找，使用自己私有的即可</p>
+</li>
+<li><p>没有找到，则基于<strong>proto</strong>找所属类的prototype，如果找到就用这个公有的，如果没找到，基于原型上的proto继续向上查找，一直找到Object.prototype的原型为止，如果在没有，操作的属性或者方法不存在<br><img src="http://www.guliansheng.club/img/blog/Object/函数和对象原型链.png" alt="Image 原型链"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="批量设置公有属性"><a href="#批量设置公有属性" class="headerlink" title="批量设置公有属性"></a>批量设置公有属性</h3><ul>
+<li><p>重构原型对象的方式 =&gt; 自己新开辟一个维内存，存储我们公有的属性和方法，把浏览器原来给Fn.prototype开辟的那个替换掉</p>
+</li>
+<li><p>只有浏览器天生给Fn.prototype开的堆内存里面才有constructor，而我们自己开辟的这个堆内存没有这个属性，这样constructor指向就不在是Fn而是Object了,我们需要手动添加该属性指向Fn</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.x=<span class="number">100</span>;</span><br><span class="line">&#125;</span><br><span class="line">Fn.prototype=&#123;</span><br><span class="line">    <span class="keyword">constructor</span>:Fn,//手动添加一个<span class="keyword">constructor</span>属性指向Fn;</span><br><span class="line">    a:function()&#123;</span><br><span class="line">    &#125;,</span><br><span class="line">    b:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> f = <span class="keyword">new</span> Fn;</span><br><span class="line"><span class="built_in">console</span>.log(f.constructor);<span class="comment">//没做任何处理,此时是Object</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>用这种方式给内置类增加公有的属性 </p>
+<ul>
+<li><p>我们这种方式会把之前已经存在于原型上的属性和方法给替换掉，所以我们中这种方式修改内置类的话，浏览器是给屏蔽掉的</p>
+</li>
+<li><p>但是我们可以一个个的修改内置的方法，当我们通过下述方式在数组的原型上增加方法，如果方法名和原来内置的重复了，会把人家内置的修改掉 =&gt; 我们以后在内置类的原型上增加方法，命名都需要加特殊的前缀</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.sort=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"ok"</span>);<span class="comment">// this-&gt;ary  我们当前要操作的这个数组</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="for-in-循环遍历对象时需要添加一个判断"><a href="#for-in-循环遍历对象时需要添加一个判断" class="headerlink" title="for-in 循环遍历对象时需要添加一个判断"></a>for-in 循环遍历对象时需要添加一个判断</h3><ul>
+<li><p>if(obj.hasOwnProperty(key)){},这样循环的就是私有属性</p>
+</li>
+<li><p>if(obj.propertyIsEnumerable(key)){},循环可枚举的,合上述相同</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/js面向对象/">js面向对象</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/原型链/">原型链</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/原型链的查找机制/">原型链的查找机制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
+
+      
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: '打赏支持', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'http://www.guliansheng.club/img/blog/collection/weixin.jpg',
+  alipayImage: 'http://www.guliansheng.club/img/blog/collection/zhifubao2.jpg'
+});
+</script>
+      
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/09/11/面向对象3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          面向对象3
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/11/面向对象1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">面向对象1</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原型链和原型链的查找机制"><span class="nav-number">1.</span> <span class="nav-text">原型链和原型链的查找机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数和对象"><span class="nav-number">1.1.</span> <span class="nav-text">函数和对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">1.2.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本数据类型-值类型"><span class="nav-number">1.2.1.</span> <span class="nav-text">基本数据类型(值类型)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型属性-prototype"><span class="nav-number">1.3.</span> <span class="nav-text">原型属性:prototype</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型链"><span class="nav-number">1.4.</span> <span class="nav-text">原型链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#批量设置公有属性"><span class="nav-number">1.5.</span> <span class="nav-text">批量设置公有属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for-in-循环遍历对象时需要添加一个判断"><span class="nav-number">1.6.</span> <span class="nav-text">for-in 循环遍历对象时需要添加一个判断</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2018 欢迎来到初学者博客! All Rights Reserved.
+          
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var contentdiv = document.getElementById("content");
+
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+</script>
+
+<!-- Custome JS -->
+<script src="/js/my.js"></script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

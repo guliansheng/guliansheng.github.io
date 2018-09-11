@@ -138,6 +138,328 @@ var themeMenus = {};
         
           <section id="main">
   
+    <article id="post-面向对象4"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/09/11/面向对象4/">面向对象4</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/09/11/面向对象4/" class="article-date">
+	  <time datetime="2018-09-11T02:54:50.000Z" itemprop="datePublished">2018-09-11</time>
+	</a>
+
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+
+          
+            <div class="entry-summary" style="margin-left:0;">
+            本篇章讲述的是js中的面向对象编程，第四节主要介绍函数的几种形式和类数组的概念
+函数函数的属性1function Fn()&#123;&#125;
+
+length  形参的个数
+
+name “Fn” 函数名
+
+prototype  类的原型,在原型上定义的方法都是当前”Fn”这个类实例的公有方法
+
+proto  把函数当做一个普通对象,指向Function这个类的原型
+
+
+函数的三个角色
+普通函数 : 它本身就是一个普通的函数，执行的时候形成私有的作用域（闭包），形参赋值，预解释，代码执行，执行完成后栈内存销毁/不销毁了
+
+类 ：它有自己的实例，也有一个叫做prototype属性是自己的原型，它的实例都可以指向自己的原型
+
+普通对象 ：和var obj=()中的obj一样，就是一个普通...
+          
+
+        
+          <p class="article-more-link">
+            <a href="/2018/09/11/面向对象4/#more">阅读全文</a>
+          </p>
+        </div>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/js面向对象/">js面向对象</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数/">函数</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/类数组/">类数组</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
+
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+
+  
+    <article id="post-面向对象3"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/09/11/面向对象3/">面向对象3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/09/11/面向对象3/" class="article-date">
+	  <time datetime="2018-09-11T02:51:04.000Z" itemprop="datePublished">2018-09-11</time>
+	</a>
+
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+
+          
+            <div class="entry-summary" style="margin-left:0;">
+            本篇章讲述的是js中的面向对象编程，第三节主要介绍多种形式的继承
+继承原型继承
+“原型继承”是我们JS中最常用的一种继承方式
+
+子类B想要继承父类A中的所有的属性和方法（私有+公有）,只需要让B.prototype=new A;即可
+
+原型继承的特点:它是把父类中私有的 + 公有的都继承到了子类原型上(子类公有的),子类可以重写父类的属性和方法
+
+核心：原型继承并不是把父类中的属性和方法克隆一份模一样的给B,而是让B和A之间增加了原型链的连接,以后B的实例b.想要用A中的getx方法,需要一级级的向上查找来使用
+
+
+12345678910111213function A()&#123;    this.name = 'this is A';&#125;A.prototype.getNa...
+          
+
+        
+          <p class="article-more-link">
+            <a href="/2018/09/11/面向对象3/#more">阅读全文</a>
+          </p>
+        </div>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/js面向对象/">js面向对象</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/继承/">继承</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
+
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+
+  
+    <article id="post-面向对象2"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/09/11/面向对象2/">面向对象2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/09/11/面向对象2/" class="article-date">
+	  <time datetime="2018-09-11T02:32:47.000Z" itemprop="datePublished">2018-09-11</time>
+	</a>
+
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+
+          
+            <div class="entry-summary" style="margin-left:0;">
+            本篇章讲述的是js中的面向对象编程，第二节主要介绍原型链和原型链中的查找机制
+原型链和原型链的查找机制函数和对象
+【函数】
+普通函数、类（所有的类：内置类(Array…)、自己创建的类）
+
+
+【对象】
+普通对象、数组、正则、Math、arguments…
+实例是对象类型的（除了基本类到的字面量创建的值）
+prototype的值也是对象类型的
+函数也是对象类型的
+…
+
+
+
+数据类型基本数据类型(值类型)
+number: 数字
+
+除了常规的数字, 还有NaN
+
+NaN
+
+not a number: 不是一个数,但是属于number类型
+NaN == NaN //=&gt;false , NaN和其他任何值都不相等
+isNaN(): 检测值是否为有效数字, 如果不是返回true, 是有效数字...
+          
+
+        
+          <p class="article-more-link">
+            <a href="/2018/09/11/面向对象2/#more">阅读全文</a>
+          </p>
+        </div>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/js面向对象/">js面向对象</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/原型链/">原型链</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/原型链的查找机制/">原型链的查找机制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
+
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+
+  
+    <article id="post-面向对象1"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/09/11/面向对象1/">面向对象1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/09/11/面向对象1/" class="article-date">
+	  <time datetime="2018-09-11T01:58:47.000Z" itemprop="datePublished">2018-09-11</time>
+	</a>
+
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+
+          
+            <div class="entry-summary" style="margin-left:0;">
+            本篇章讲述的是js中的面向对象编程，其中包含面向对象的概念，原型链机制，函数的继承等，第一节主要介绍概念相关知识
+概念对象
+万物皆对象
+
+类
+对象的具体细分
+按照功能特点进行分类：大类，小类
+类都是函数数据类型的
+
+实例
+类中具体的一个事物
+拿出类别中的具体一个实例进行研究，那么当前类别下的其他实例也具备这特点和特征
+实例都是对象数据类型的
+
+构造函数执行机制像普通函数执行一样，形成一个私有的作用域(栈内存)
+形参赋值
+变量提升
+都是私有变量
+
+创建堆内存
+在JS代码自上而下执行之前，首先在当前形成的私有栈中创建一个对象（创建一个堆内存：暂时不存储任何的东西），并且让函数中的执行主体（THIS）指向这个新的堆内存（THIS===创建的对象），堆内存的地址赋值给了THIS
+
+代码自上而下...
+          
+
+        
+          <p class="article-more-link">
+            <a href="/2018/09/11/面向对象1/#more">阅读全文</a>
+          </p>
+        </div>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/js面向对象/">js面向对象</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数执行/">函数执行</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面向对象/">面向对象</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面向对象概念/">面向对象概念</a></li></ul>
+
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+
+  
     <article id="post-javaScript基础4"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -167,7 +489,7 @@ var themeMenus = {};
 
           
             <div class="entry-summary" style="margin-left:0;">
-            本篇是JavaScript基础第四篇章，这是js基础的最后一个篇章，主要讲述事件的基础以及事件的传播机制，DOM二级事件绑定
+            本篇是JavaScript基础第四节，这是js基础的最后一个篇章，主要讲述事件的基础以及事件的传播机制，DOM二级事件绑定
 
 文中出现的html代码样式请自行设置
 
@@ -184,7 +506,7 @@ onunload (浏览器关闭事件)
 
 MouseEvent 记录的是页面中唯一一个鼠标每一次触发时候的相关信息,和到底在哪个元素上触发的没有关系
 
-pageX | Y兼容处理 : event.pageX | Y = event.pageX | Y || ...
+pageX | Y兼容处理 : event.pageX | Y = event.pageX | Y || (...
           
 
         
@@ -246,8 +568,8 @@ pageX | Y兼容处理 : event.pageX | Y = event.pageX | Y || ...
 
           
             <div class="entry-summary" style="margin-left:0;">
-            本篇是JavaScript基础第三篇章，本章介绍正则的相关知识，详细介绍了正则的特性和应用
-正则正则含义
+            本篇是JavaScript基础第三节，本章介绍正则的相关知识，详细介绍了正则的特性和应用
+正则表达式正则含义
 他就是一个规则,用来处理字符串的一个规则(正则就是用来处理字符串)
 
 创建正则
@@ -263,8 +585,8 @@ var reg = new RegExp(“”);
 
 正则两种创建方式是有区别的
 
-在字面量方式中 , //之间包起来的所有 内容都是元字符,有的具有特殊的意义,大部分都是代表本身含义的普通元字符
-12345678910var name = 'gu'var reg = /^\d+"+name+"\d+$/;//并不是字符串拼接console.log(reg.test('200gu222')) //-&gt;flaseconsole...
+在字面量方式中 , ‘//’之间包起来的所有 内容都是元字符,有的具有特殊的意义,大部分都是代表本身含义的普通元字符
+12345678910var name = 'gu'var reg = /^\d+"+name+"\d+$/;//并不是字符串拼接console.log(reg.test('200gu222')) //-&gt;flasecon...
           
 
         
@@ -326,7 +648,7 @@ var reg = new RegExp(“”);
 
           
             <div class="entry-summary" style="margin-left:0;">
-            本篇是JavaScript基础第二篇章，主要介绍DOM的相关操作和元素属性值设置
+            本篇是JavaScript基础第二节，主要介绍DOM的相关操作和元素属性值设置
 
 注：文中的[context]表示元素对象
 
@@ -345,7 +667,7 @@ document.body  (获取整个BODY对象)
 
 document.head  (获取整个HEAD对象)
 
-[context].quer...
+[context].query...
           
 
         
@@ -407,7 +729,7 @@ document.head  (获取整个HEAD对象)
 
           
             <div class="entry-summary" style="margin-left:0;">
-            本篇是JavaScript基础第一篇章，主要是查漏一些基础内容和平时可能不注意的地方, 有问题可在下方留言
+            本篇是JavaScript基础第一节，主要是查漏一些基础内容和平时可能不注意的地方, 有问题可在下方留言
 基础弹出框
 弹出框的内容最后都会被转换为字符串输出(调用toString这个方法)1alert(1 + 1);//=&gt;"2";
 
@@ -425,7 +747,7 @@ remove / rm / clear / del / delete：删除
 get / query / select：查询/获取
 
 
-常规规...
+常规规范...
           
 
         
@@ -630,6 +952,54 @@ Generate static files1$ hexo generat...
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2018/09/11/面向对象4/">面向对象4</a></h6>
+              <span>2018-09-11</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/09/11/面向对象3/">面向对象3</a></h6>
+              <span>2018-09-11</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/09/11/面向对象2/">面向对象2</a></h6>
+              <span>2018-09-11</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/09/11/面向对象1/">面向对象1</a></h6>
+              <span>2018-09-11</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2018/09/10/javaScript基础4/">javaScript基础4</a></h6>
               <span>2018-09-10</span>
             </div>
@@ -648,42 +1018,6 @@ Generate static files1$ hexo generat...
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2018/09/10/javaScript基础2/">javaScript基础2</a></h6>
-              <span>2018-09-10</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2018/09/10/javaScript基础1/">javaScript基础1</a></h6>
-              <span>2018-09-10</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2018/09/09/hello-world/">Hello World</a></h6>
-              <span>2018-09-09</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -694,7 +1028,7 @@ Generate static files1$ hexo generat...
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/text/">text</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js面向对象/">js面向对象</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/text/">text</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -704,7 +1038,7 @@ Generate static files1$ hexo generat...
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM基础/">DOM基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hello-world/">hello world</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js基础/">js基础</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/事件基础/">事件基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二级事件绑定/">二级事件绑定</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/元素属性设置/">元素属性设置</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/初始化文章/">初始化文章</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/控制台/">控制台</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM基础/">DOM基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hello-world/">hello world</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js基础/">js基础</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/事件基础/">事件基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二级事件绑定/">二级事件绑定</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/元素属性设置/">元素属性设置</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数/">函数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数执行/">函数执行</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/初始化文章/">初始化文章</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原型链/">原型链</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原型链的查找机制/">原型链的查找机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/控制台/">控制台</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类数组/">类数组</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/继承/">继承</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象概念/">面向对象概念</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -714,7 +1048,7 @@ Generate static files1$ hexo generat...
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/DOM基础/" style="font-size: 10px;">DOM基础</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/js基础/" style="font-size: 20px;">js基础</a> <a href="/tags/事件基础/" style="font-size: 10px;">事件基础</a> <a href="/tags/二级事件绑定/" style="font-size: 10px;">二级事件绑定</a> <a href="/tags/元素属性设置/" style="font-size: 10px;">元素属性设置</a> <a href="/tags/初始化文章/" style="font-size: 10px;">初始化文章</a> <a href="/tags/控制台/" style="font-size: 10px;">控制台</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a>
+      <a href="/tags/DOM基础/" style="font-size: 10px;">DOM基础</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/js基础/" style="font-size: 20px;">js基础</a> <a href="/tags/事件基础/" style="font-size: 10px;">事件基础</a> <a href="/tags/二级事件绑定/" style="font-size: 10px;">二级事件绑定</a> <a href="/tags/元素属性设置/" style="font-size: 10px;">元素属性设置</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/函数执行/" style="font-size: 10px;">函数执行</a> <a href="/tags/初始化文章/" style="font-size: 10px;">初始化文章</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/原型链的查找机制/" style="font-size: 10px;">原型链的查找机制</a> <a href="/tags/控制台/" style="font-size: 10px;">控制台</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/类数组/" style="font-size: 10px;">类数组</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/面向对象/" style="font-size: 20px;">面向对象</a> <a href="/tags/面向对象概念/" style="font-size: 10px;">面向对象概念</a>
     </div>
   </div>
 
@@ -724,7 +1058,7 @@ Generate static files1$ hexo generat...
     <h3 class="widget-title">归档</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">5</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

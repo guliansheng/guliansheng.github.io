@@ -271,11 +271,11 @@ object {
 	color: #fff;
 	text-decoration: none;
 	display: inline-block;
-	padding: 10px 20px;
+	padding: 20px 0;
 	}
 .site-description {
 	color: #999;
-	font-family: "Yanone Kaffeesatz", "Microsoft YaHei Light", Arial, Helvetica, sans-serif;
+	font-family: "微软雅黑" sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	}
@@ -343,7 +343,7 @@ object {
 	display: block;
 	color: #666;
 	font-size: 1em;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: "微软雅黑" sans-serif;
 	}
 #main-navigation .sf-menu > ul > li:last-child:after {
 	display: none;

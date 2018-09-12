@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="欢迎来到非常规人类交流中心!">
 <meta property="og:description" content="本篇是JavaScript基础第二节，主要介绍DOM的相关操作和元素属性值设置  注：文中的[context]表示元素对象">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-12T01:24:32.901Z">
+<meta property="og:updated_time" content="2018-09-12T03:01:29.045Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javaScript基础2">
 <meta name="twitter:description" content="本篇是JavaScript基础第二节，主要介绍DOM的相关操作和元素属性值设置  注：文中的[context]表示元素对象">
@@ -274,7 +274,7 @@ var themeMenus = {};
 </li>
 <li><p>xxx.style.backgroundColor=’xxx’此时不仅把JS中对象对应的属性值改变了，而且也会映射到页面的HTML标签上（标签中有一个style行内样式、元素的样式改变了）</p>
 </li>
-<li><p>xxx.className=’xxx’此时不仅是把S对象中的属性值改了，而且页面中的标签增加了class样式类（可以看见的）</p>
+<li><p>xxx.className=’xxx’此时不仅是把对象中的属性值改了，而且页面中的标签增加了class样式类（可以看见的）</p>
 </li>
 </ul>
 </li>
@@ -376,10 +376,11 @@ var a = new Donate({
 
   <div class="clearfix container">
       <div class="site-info">
-	      &copy; 2018 欢迎来到非常规人类交流中心! All Rights Reserved.
+        <p>友情链接：<a href="https://www.javacat.cn">javacat博客</a></p>
+          &copy; 2018 欢迎来到非常规人类交流中心! All Rights Reserved.
           
             <span id="busuanzi_container_site_uv">
-              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次
               本站总访问量<span id="busuanzi_value_site_pv"></span>次
             </span>
           
@@ -400,7 +401,8 @@ var a = new Donate({
 </script>
 
 <!-- Custome JS -->
-<script src="/js/my.js"></script>
+<script src="/./js/my.js"></script>
+
     </div>
     <!-- <nav id="mobile-nav">
   

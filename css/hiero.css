@@ -278,6 +278,7 @@ object {
 	font-family: "微软雅黑" sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 1px;
+	font-size:12px;
 	}
 
 /* MENU
@@ -331,9 +332,10 @@ object {
 #main-navigation {
 	clear: both;
 	padding: 20px 0 0;
+	display: inline-flex;
 	}
 #main-navigation .sf-menu {
-	background: #060608;
+	background: #060606;
 	}
 #main-navigation .sf-menu > ul > li:after {
 	width: 1px;

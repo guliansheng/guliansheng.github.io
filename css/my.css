@@ -3,3 +3,13 @@ type your custom css here
 在本文件键入您的自定义CSS
 升级主题文件时请注意保护本文件，防止意外覆盖。
 */
+.my_author{
+width: 100%;
+height: 60px;
+background: #F9F9F9;
+border-left: 3px #FF1700 solid;
+box-sizing: border-box;
+padding: 10px 15px;
+margin-top: 20px;
+color: #555;
+}

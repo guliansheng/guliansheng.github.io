@@ -30,7 +30,7 @@
 <meta property="og:description" content="本章主要介绍Git的使用，此处省略安装过程，安装Git可直接前往Git官网下载对应软件">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://www.guliansheng.club/img/blog/git/git.jpg">
-<meta property="og:updated_time" content="2018-09-13T02:46:55.136Z">
+<meta property="og:updated_time" content="2018-09-13T07:11:26.015Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git版本控制">
 <meta name="twitter:description" content="本章主要介绍Git的使用，此处省略安装过程，安装Git可直接前往Git官网下载对应软件">
@@ -83,11 +83,11 @@ var themeMenus = {};
 
   themeMenus["/"] = "首页"; 
 
-  themeMenus["/archives"] = "归档"; 
-
   themeMenus["/categories"] = "分类"; 
 
   themeMenus["/tags"] = "标签"; 
+
+  themeMenus["/archives"] = "归档"; 
 
   themeMenus["/about"] = "关于"; 
 
@@ -120,11 +120,11 @@ var themeMenus = {};
                     
                       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">首页</a> </li>
                     
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">归档</a> </li>
-                    
                       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">分类</a> </li>
                     
                       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">标签</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">归档</a> </li>
                     
                       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">关于</a> </li>
                     
@@ -151,7 +151,7 @@ var themeMenus = {};
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img fancybox" href="http://www.guliansheng.club/img/blog/git/git.jpg" rel="gallery_cjlzz3z3z0000mws4jbmi23s7">
+      <a class="article-gallery-img fancybox" href="http://www.guliansheng.club/img/blog/git/git.jpg" rel="gallery_cjm0b8usj0000ags45u4etdex">
         <img src="http://www.guliansheng.club/img/blog/git/git.jpg" itemprop="image">
       </a>
     
@@ -185,7 +185,7 @@ var themeMenus = {};
     <div class="article-entry" itemprop="articleBody">
       
         <p>本章主要介绍Git的使用，此处省略安装过程，安装Git可直接前往Git官网下载对应软件<br><a id="more"></a></p>
-<h1 id="Git基本用法"><a href="#Git基本用法" class="headerlink" title="Git基本用法"></a>Git基本用法</h1><h2 id="什么是Git"><a href="#什么是Git" class="headerlink" title="什么是Git"></a>什么是Git</h2><h3 id="Git和SVN的区别"><a href="#Git和SVN的区别" class="headerlink" title="Git和SVN的区别"></a>Git和SVN的区别</h3><ul>
+<h2 id="Git简介"><a href="#Git简介" class="headerlink" title="Git简介"></a>Git简介</h2><h3 id="Git和SVN的区别"><a href="#Git和SVN的区别" class="headerlink" title="Git和SVN的区别"></a>Git和SVN的区别</h3><ul>
 <li><p>svn是集中式的，需要有一台中央服务器</p>
 </li>
 <li><p>Git是分布式的</p>
@@ -406,6 +406,15 @@ var a = new Donate({
     
 <nav id="article-nav">
   
+    <a href="/2018/09/13/webpack/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          webpack
+        
+      </div>
+    </a>
+  
   
     <a href="/2018/09/11/bootstrap3快速调用11/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
@@ -423,7 +432,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     
-      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git基本用法"><span class="nav-number">1.</span> <span class="nav-text">Git基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Git"><span class="nav-number">1.1.</span> <span class="nav-text">什么是Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git和SVN的区别"><span class="nav-number">1.1.1.</span> <span class="nav-text">Git和SVN的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git配置"><span class="nav-number">1.1.2.</span> <span class="nav-text">Git配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git命令行操作"><span class="nav-number">1.2.</span> <span class="nav-text">Git命令行操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本命令"><span class="nav-number">1.2.1.</span> <span class="nav-text">基本命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git命令"><span class="nav-number">1.2.2.</span> <span class="nav-text">git命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git状态"><span class="nav-number">1.2.3.</span> <span class="nav-text">git状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-组件"><span class="nav-number">1.2.4.</span> <span class="nav-text">git 组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git分支"><span class="nav-number">1.2.5.</span> <span class="nav-text">git分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-常用"><span class="nav-number">1.2.6.</span> <span class="nav-text">git 常用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git远程工厂"><span class="nav-number">1.3.</span> <span class="nav-text">git远程工厂</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#与远程工厂交互的几种情况"><span class="nav-number">1.3.1.</span> <span class="nav-text">与远程工厂交互的几种情况</span></a></li></ol></li></ol></li></ol>
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git简介"><span class="nav-number">1.</span> <span class="nav-text">Git简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git和SVN的区别"><span class="nav-number">1.1.</span> <span class="nav-text">Git和SVN的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git配置"><span class="nav-number">1.2.</span> <span class="nav-text">Git配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git命令行操作"><span class="nav-number">2.</span> <span class="nav-text">Git命令行操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本命令"><span class="nav-number">2.1.</span> <span class="nav-text">基本命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git命令"><span class="nav-number">2.2.</span> <span class="nav-text">git命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git状态"><span class="nav-number">2.3.</span> <span class="nav-text">git状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-组件"><span class="nav-number">2.4.</span> <span class="nav-text">git 组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git分支"><span class="nav-number">2.5.</span> <span class="nav-text">git分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-常用"><span class="nav-number">2.6.</span> <span class="nav-text">git 常用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git远程工厂"><span class="nav-number">3.</span> <span class="nav-text">git远程工厂</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#与远程工厂交互的几种情况"><span class="nav-number">3.1.</span> <span class="nav-text">与远程工厂交互的几种情况</span></a></li></ol></li></ol>
     
     </div>
   </aside>
@@ -469,11 +478,11 @@ var a = new Donate({
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
     <a href="/categories" class="mobile-nav-link">Categories</a>
   
     <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
   
     <a href="/about" class="mobile-nav-link">About</a>
   

@@ -136,8 +136,8 @@ body {
 }
 #rocket {
   position: fixed;
-  right: 50px;
-  bottom: 50px;
+  right: 20px;
+  bottom: 20px;
   display: block;
   visibility: hidden;
   width: 26px;
@@ -511,6 +511,9 @@ a.article-title:hover {
 .article-entry h6 {
   line-height: 1.1em;
   margin: 1.1em 0;
+}
+.article-entry h3 {
+  color: #666;
 }
 .article-entry a {
   color: color-link;
@@ -937,7 +940,7 @@ a.article-title:hover {
   line-height: 1em;
   font-size: 0.9em;
   float: left;
-  overflow: hidden;
+  overflow-y: auto;
 }
 @media screen and (max-width: 479px) {
   #toc {
@@ -948,6 +951,24 @@ a.article-title:hover {
   #toc {
     display: none;
   }
+}
+#toc::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+#toc::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+#toc::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #555;
 }
 .toc-fixed {
   position: fixed;
@@ -1213,7 +1234,7 @@ a.article-title:hover {
   border-width: 1px 0;
   overflow: auto;
   color: #c5c8c6;
-  font-size: 0.9em;
+  font-size: 1em;
   line-height: 1em;
 }
 .article-entry .highlight .gutter pre,

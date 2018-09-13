@@ -515,6 +515,9 @@ a.article-title:hover {
 .article-entry h3 {
   color: #444;
 }
+.article-entry h4 {
+  color: #555;
+}
 .article-entry a {
   color: color-link;
   text-decoration: none;

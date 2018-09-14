@@ -1065,12 +1065,14 @@ body.search .page .entry-footer {
 	width: 68%;
 	margin: 0 10px 0 0;
 	height: 42px;
-    width: 100%;
 	}
 .site-sidebar .widget_search .search-submit {
 	font-size: 1.3em;
 	}
-
+.search-form input[type="submit"] {
+	float: right;
+	padding: 5px 10px;
+}
 .site-sidebar .widget_archive select,
 .site-sidebar .widget_categories select {
 	width: 100%;

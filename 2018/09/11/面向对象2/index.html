@@ -27,7 +27,7 @@
 <meta property="og:description" content="本篇章讲述的是js中的面向对象编程，第二节主要介绍原型链和原型链中的查找机制">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://www.guliansheng.club/img/blog/Object/函数和对象原型链.png">
-<meta property="og:updated_time" content="2018-09-15T07:36:54.681Z">
+<meta property="og:updated_time" content="2018-09-18T02:52:47.906Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面向对象2">
 <meta name="twitter:description" content="本篇章讲述的是js中的面向对象编程，第二节主要介绍原型链和原型链中的查找机制">
@@ -199,8 +199,19 @@ var themeMenus = {};
 </li>
 <li><p>boolean：布尔</p>
 <ul>
-<li>Boolean()方法，只有0,NaN,空字符串，null，undefined这五个数据值转换为布尔类型的时候为false，其余都是true;</li>
-<li>可以直接用!!代替Boolean()来使用;</li>
+<li><p>Boolean()方法</p>
+<blockquote>
+<p>只有0，NaN，空字符串，null，undefined这五个数据值转换为布尔类型的时候为false，其余都是true；<br>包括对象、数组、正则、函数等；注意 ‘0’、’null’、’false’、{}、[]也都是真值</p>
+<ol>
+<li>false 除了和自身比较为 true 外，和 0，”” 比较也为 true</li>
+<li>null 只和 undefined 比较时为 true， 反过来 undefined 也仅和 null 比较为 true，没有第二个</li>
+<li>0 除了和 false 比较为 true，还有空字符串 ‘’” 和空数组 []</li>
+<li>空字符串 ‘’ 除了和 false 比较为 true，还有一个数字 0</li>
+</ol>
+</blockquote>
+</li>
+<li><p>可以直接用!!代替Boolean()来使用;</p>
+</li>
 </ul>
 </li>
 <li><p>null：空对象指针</p>
@@ -216,7 +227,7 @@ var themeMenus = {};
 <ul>
 <li><p>{}：普通对象</p>
 <ul>
-<li>删除属性值<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">obj.xxx = <span class="literal">null</span>; <span class="comment">//=&gt;假删除(让其属性值为null,,但是属性还在对象中)</span></span><br><span class="line"><span class="keyword">delete</span> obj.xxx; <span class="comment">//=&gt;真删除(把整个属性都在对象中暴力移除)</span></span><br></pre></td></tr></table></figure>
+<li>删除属性值<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">obj.xxx = <span class="literal">null</span>; <span class="comment">//=&gt;假删除(让其属性值为null，但是属性还在对象中)</span></span><br><span class="line"><span class="keyword">delete</span> obj.xxx; <span class="comment">//=&gt;真删除(把整个属性都在对象中暴力移除)</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -236,7 +247,7 @@ var themeMenus = {};
 <li><p>作用：检测数据类型的运算符，返回一个字符串，内容证明值是属于什么类型的</p>
 </li>
 <li><p>局限：无法将对象类型的中的数据类型进行细分  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="keyword">typeof</span> [] <span class="comment">//=&gt;"string"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125; <span class="comment">//=&gt;"function"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="number">234</span> <span class="comment">// =&gt; "number"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="string">'基地搜'</span> <span class="comment">// =&gt; "string"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span> <span class="comment">//=&gt;"undefined"</span></span><br><span class="line"><span class="keyword">typeof</span> &#123;&#125; <span class="comment">// =&gt; "object"</span></span><br><span class="line"><span class="keyword">typeof</span> [] <span class="comment">// =&gt; "object"</span></span><br><span class="line"><span class="keyword">typeof</span> /^$/ <span class="comment">// =&gt; "object"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span> <span class="comment">// =&gt; "object" </span></span><br><span class="line"><span class="comment">//typeof还可以用来检测一个变量是否存在</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> a != <span class="string">'undefined'</span>)&#123;alert(<span class="string">'值存在'</span>)&#125; <span class="comment">//不使用if(a),是因为如果a未声明则会出错</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="keyword">typeof</span> [] <span class="comment">//=&gt;"string"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="string">'基地搜'</span> <span class="comment">// =&gt; "string"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="number">234</span> <span class="comment">// =&gt; "number"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span> <span class="comment">//=&gt;"undefined"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125; <span class="comment">//=&gt;"function"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="built_in">console</span>.log <span class="comment">//=&gt;"function"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span> <span class="comment">// =&gt;null： "object"</span></span><br><span class="line"><span class="keyword">typeof</span> &#123;&#125; <span class="comment">// =&gt;对象： "object"</span></span><br><span class="line"><span class="keyword">typeof</span> [] <span class="comment">// =&gt;数组： "object"</span></span><br><span class="line"><span class="keyword">typeof</span> /^$/ <span class="comment">// =&gt;正则： "object"</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">//typeof还可以用来检测一个变量是否存在</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> a != <span class="string">'undefined'</span>)&#123;alert(<span class="string">'值存在'</span>)&#125; <span class="comment">//不使用if(a)，是因为如果a未声明则会出错</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h4><ul>

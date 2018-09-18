@@ -943,7 +943,6 @@ a.article-title:hover {
   line-height: 1em;
   font-size: 0.9em;
   float: left;
-  overflow-y: auto;
 }
 @media screen and (max-width: 479px) {
   #toc {
@@ -978,7 +977,7 @@ a.article-title:hover {
   top: 30px;
   margin-top: 0;
   max-height: 81%;
-  overflow: hidden;
+  overflow: auto;
   z-index: 1;
 }
 .nav {

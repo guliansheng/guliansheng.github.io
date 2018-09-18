@@ -26,7 +26,7 @@
 <meta property="og:site_name" content="欢迎来到前端学习博客!">
 <meta property="og:description" content="本篇是JavaScript基础第一节，主要是查漏一些基础内容和平时可能不注意的地方, 有问题可在下方留言">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-12T01:24:33.881Z">
+<meta property="og:updated_time" content="2018-09-18T02:33:18.073Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javaScript基础1">
 <meta name="twitter:description" content="本篇是JavaScript基础第一节，主要是查漏一些基础内容和平时可能不注意的地方, 有问题可在下方留言">
@@ -192,9 +192,9 @@ var themeMenus = {};
 <li><p>‘==’ 两边</p>
 <ul>
 <li><p>两个等于号比较，左右两边数据值的类型不一样，浏览器会把两边的类型使用Number()方法都转换为数字然后再比较，但是null和undefined除外</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">null</span> == <span class="literal">undefined</span>  <span class="comment">//=&gt; true</span></span><br><span class="line"><span class="literal">null</span> === <span class="literal">undefined</span> <span class="comment">//=&gt; false </span></span><br><span class="line"><span class="literal">null</span> == <span class="number">0</span> <span class="comment">//=&gt;false  null和undefined和其他任何值都不相等</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">null</span> == <span class="literal">undefined</span>  <span class="comment">//=&gt; true</span></span><br><span class="line"><span class="literal">null</span> === <span class="literal">undefined</span> <span class="comment">//=&gt; false </span></span><br><span class="line"><span class="literal">null</span> == <span class="number">0</span> <span class="comment">//=&gt;false  null和undefined和其他任何值都不相等</span></span><br><span class="line"><span class="string">''</span> == <span class="number">0</span> <span class="comment">//=&gt; true</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>等号两边类型相同,进行 ‘===’ 比较</p>
+<li><p>等号两边类型相同,进行 ‘===’ 比较 (不会进行强制类型转换)</p>
 </li>
 </ul>
 </li>

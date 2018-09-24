@@ -549,12 +549,15 @@ a.article-title:hover {
 }
 .article-entry th {
   font-weight: bold;
-  border-bottom: 3px solid #eef1f8;
   padding-bottom: 0.5em;
+  background: #4f4f4f;
+  color: #fff;
 }
 .article-entry td {
-  border-bottom: 1px solid #eef1f8;
-  padding: 10px 0;
+  padding: 10px;
+}
+.article-entry tr:nth-child(2n) {
+  background: #f6f4f2;
 }
 .article-entry blockquote {
   padding: 0.1px 20px;

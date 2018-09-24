@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- PACE Progress Bar START -->
+  
+  
+
+  <!-- PACE Progress Bar START -->
+
+  
+  <title>this关键字 | 欢迎来到前端学习博客!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="博客,html5,css3,javaScript,js,es6,jQuery,bootstrap,vue,webpack,hexo,guliansheng,初学者,网站,基础,前端学习,前端框架,前端知识总结" />
+  
+  
+  
+  
+  <meta name="description" content="本章节主要介绍this在js中的几种情况下都是指向谁，并且如何修改this的指向">
+<meta name="keywords" content="this,call,apply,bind">
+<meta property="og:type" content="article">
+<meta property="og:title" content="this关键字">
+<meta property="og:url" content="http://www.guliansheng.club/2018/09/19/面向对象/this关键字/index.html">
+<meta property="og:site_name" content="欢迎来到前端学习博客!">
+<meta property="og:description" content="本章节主要介绍this在js中的几种情况下都是指向谁，并且如何修改this的指向">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-24T02:33:55.276Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="this关键字">
+<meta name="twitter:description" content="本章节主要介绍this在js中的几种情况下都是指向谁，并且如何修改this的指向">
+  
+    <link rel="alternate" href="/atom.xml" title="欢迎来到前端学习博客!" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/my.css">
+  <!-- Google Adsense -->
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-0123456789ABCDEF",
+          enable_page_level_ads: true
+      });
+  </script>
+  
+</head>
+
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "首页"; 
+
+  themeMenus["/categories"] = "分类"; 
+
+  themeMenus["/tags"] = "标签"; 
+
+  themeMenus["/archives"] = "归档"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  <header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="欢迎来到前端学习博客!" rel="home"> 非常规人类交流中心 </a>
+            
+          </h1>
+
+          
+            <div class="site-description">前端学习博客，主要以JavaScript为主进行展开，其中包括JavaScript基础和相关框架(jQuery、bootstrap、vue...)的讲解和使用，另外还有与前端相关知识的扩展，如git、github、webpack、hexo...</div>
+          
+
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+          <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+            <div class="clearfix sf-menu">
+
+              <ul id="main-nav" class="nmenu sf-js-enabled">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">首页</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">分类</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">标签</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">归档</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+
+      </div>
+  </div>
+</header>
+
+
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-面向对象/this关键字" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      this关键字
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/09/19/面向对象/this关键字/" class="article-date">
+	  <time datetime="2018-09-19T07:51:56.000Z" itemprop="datePublished">2018-09-19</time>
+	</a>
+
+
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本章节主要介绍this在js中的几种情况下都是指向谁，并且如何修改this的指向<br><a id="more"></a></p>
+<h2 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h2><h3 id="this在js中的三种情况"><a href="#this在js中的三种情况" class="headerlink" title="this在js中的三种情况"></a>this在js中的三种情况</h3><ul>
+<li>自执行函数中的this，通常情况下指向Window</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~<span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">//=&gt; Window</span></span><br><span class="line">&#125;();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在元素绑定事件方法中的this，通常情况下指向元素本身</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">odiv.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>方法执行时看前面是否有点，有的话，this就是指向点前面的对象</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj=&#123;<span class="attr">name</span>:<span class="string">'gu'</span>,<span class="attr">fn</span>:fn&#125;;</span><br><span class="line">obj.fn(); <span class="comment">//=&gt; obj</span></span><br><span class="line">fn(); <span class="comment">//=&gt; Window</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这些情况都是在非严格模式下，在严格模式下如果没有指定执行主体，this不再指向Window，而是undefined</p>
+</blockquote>
+<h3 id="this指向总结"><a href="#this指向总结" class="headerlink" title="this指向总结"></a>this指向总结</h3><ul>
+<li><p>this要在执行的时候才能确定指向，定义时无法确认</p>
+</li>
+<li><p>this指向谁和函数在哪定义和执行没有关系</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"div"</span>&gt;</span>这是div1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"div2"</span>&gt;</span>这是div2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> innerHTML=<span class="string">'window'</span>;<span class="comment">//这里不能用let,因为let定义的全局变量不是window的身上的属性,这里的代码也不能放在window.onload中,这时定义的不是全局变量,而是window.onload中的局部变量;</span></span></span><br><span class="line"><span class="javascript"><span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">    odiv=<span class="built_in">document</span>.querySelector(<span class="string">'.div'</span>);</span></span><br><span class="line"><span class="javascript">    odiv2=<span class="built_in">document</span>.querySelector(<span class="string">'.div2'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.innerHTML);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> json=&#123;</span></span><br><span class="line"><span class="javascript">        innerHTML:<span class="string">'json'</span>,</span></span><br><span class="line"><span class="undefined">        fun:fun,</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="comment">//函数中的this指向执行这个事件或方法前面的对象,即 . 前面的主体</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    fun();<span class="comment">//全局变量和全局方法是window身上的属性和方法,这里实际是window.fun()</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    json.fun();<span class="comment">//json是主体</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    odiv.onclick=fun();<span class="comment">//这里直接执行了函数fun,而不是将这个方法交给点击事件来执行,所以这里执行的实际是window.fun();</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    odiv.onclick=fun;<span class="comment">//odiv1是主体,执行点击事件;</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    odiv2.onclick=json.fun;<span class="comment">//odiv2是主体,json.fun只是方法的地址;</span></span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="call-apply-bind"><a href="#call-apply-bind" class="headerlink" title="call-apply-bind"></a>call-apply-bind</h2><h3 id="call方法和apply方法"><a href="#call方法和apply方法" class="headerlink" title="call方法和apply方法"></a>call方法和apply方法</h3><h4 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h4><ul>
+<li><p>都是由函数调用，并且传入的第一参数为对象，会将方法中的this的指向该对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> json = &#123;&#125;</span><br><span class="line">fn.call(json)</span><br><span class="line">fn.apply(json)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行过程相同：都是先改变this的指向，再将函数执行</p>
+</li>
+</ul>
+<h4 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h4><ul>
+<li>传入的参数不同 </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// call方法传参</span></span><br><span class="line"><span class="keyword">var</span> json = &#123;<span class="attr">name</span>:<span class="string">'gu'</span>&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">num1,num2</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(num1+num2);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line">sum.call(<span class="number">100</span>,<span class="number">200</span>);<span class="comment">// NaN , this -&gt; Number</span></span><br><span class="line">sum.call(json,<span class="number">100</span>,<span class="number">200</span>); <span class="comment">// 300 , this -&gt; json</span></span><br><span class="line">sum.call(json); <span class="comment">// NaN , this -&gt; json</span></span><br><span class="line">sum.call(); <span class="comment">// NaN , this -&gt; window ; 在严格模式下:this -&gt; undefined</span></span><br><span class="line">sum.call(<span class="literal">null</span>,<span class="number">100</span>,<span class="number">200</span>); <span class="comment">// 300 , this -&gt; window ; 在严格模式下:this -&gt; null</span></span><br><span class="line">sum.call(<span class="literal">undefined</span>); <span class="comment">// NaN , this -&gt; window ; 在严格模式下:this -&gt; undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// apply方法传参</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">34</span>,<span class="number">56</span>,<span class="number">22</span>,<span class="number">23</span>,<span class="number">45</span>,<span class="number">22</span>,<span class="number">23</span>,<span class="number">76</span>,<span class="number">54</span>,<span class="number">34</span>,<span class="number">23</span>,<span class="number">34</span>]</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, arr)); <span class="comment">// 76</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.min.apply(<span class="literal">null</span>, arr)); <span class="comment">// 22</span></span><br></pre></td></tr></table></figure>
+<h4 id="call的用法（apply相似不再详述）"><a href="#call的用法（apply相似不再详述）" class="headerlink" title="call的用法（apply相似不再详述）"></a>call的用法（apply相似不再详述）</h4><ul>
+<li>求类数组平均值<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//借用数组的方法,只能是类数组可以这样借用</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">avgFn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">Array</span>.prototype.sort.call(<span class="built_in">arguments</span>,<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span> a-b&#125;);</span><br><span class="line">        [].splice.call(<span class="built_in">arguments</span>,<span class="number">0</span>,<span class="number">1</span>);</span><br><span class="line">        [].splice.call(<span class="built_in">arguments</span>,<span class="keyword">this</span>.length<span class="number">-1</span>,<span class="number">1</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span><br><span class="line">        <span class="built_in">console</span>.log((<span class="built_in">eval</span>([].join.call(<span class="built_in">arguments</span>,<span class="string">'+'</span>))/<span class="built_in">arguments</span>.length).toFixed(<span class="number">1</span>))<span class="comment">//保留几位小数点,会四舍五入</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//将类数组克隆到一个新数组中,再操作这个数组</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">avgFn2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> newarg = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);</span><br><span class="line">        newarg = [].slice.call(<span class="built_in">arguments</span>);<span class="comment">//和上面的意思相同;</span></span><br><span class="line">        newarg.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span> a-b&#125;);</span><br><span class="line">        newarg.splice(<span class="number">0</span>,<span class="number">1</span>);</span><br><span class="line">        newarg.splice(newarg.length<span class="number">-1</span>,<span class="number">1</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(newarg);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">eval</span>(newarg.join(<span class="string">"+"</span>))/newarg.length);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    avgFn(<span class="number">45</span>,<span class="number">3.4</span>,<span class="number">3</span>,<span class="number">23</span>,<span class="number">5.6</span>,<span class="number">46</span>,<span class="number">32.2</span>)</span><br><span class="line">    avgFn2(<span class="number">45</span>,<span class="number">3.4</span>,<span class="number">3</span>,<span class="number">23</span>,<span class="number">5.6</span>,<span class="number">46</span>,<span class="number">32.2</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="bind方法"><a href="#bind方法" class="headerlink" title="bind方法"></a>bind方法</h3><ul>
+<li><p>与call方法类似，传入的参数相同，但是在执行时，只会改变this的指向，并不会直接将函数执行</p>
+</li>
+<li><p>执行bind会有一个返回值,这个返回值就是把函数中的的this改变后的结果</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> json1 = &#123;<span class="attr">name</span>:<span class="string">'gu'</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> json2 = &#123;<span class="attr">name</span>:<span class="string">'lian'</span>&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">num1,num2</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(num1+num2);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> bindsum1 = sum.bind(json,<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">bindsum1(); <span class="comment">// 3 , gu</span></span><br><span class="line"><span class="keyword">var</span> bindsum2 = sum.bind(json2);</span><br><span class="line">bindsum2(<span class="number">1</span>,<span class="number">2</span>) <span class="comment">// 3 , lian</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/JavaScript面向对象/">JavaScript面向对象</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apply/">apply</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bind/">bind</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/call/">call</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/this/">this</a></li></ul>
+
+      
+
+      <div class = 'my_author'>
+        <p><strong style = 'color:#333'>本文作者：</strong>guliansheng</p>
+        <p><strong style = 'color:#333'>版权声明：</strong>本博客所有文章除特别声明外，其余文章转载请注明出处！</p>
+      </div>
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: '打赏支持', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'http://www.guliansheng.club/img/blog/collection/weixin.jpg',
+  alipayImage: 'http://www.guliansheng.club/img/blog/collection/zhifubao2.jpg'
+});
+</script>
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/09/13/webpack/webpack/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">webpack</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#this关键字"><span class="nav-number">1.</span> <span class="nav-text">this关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#this在js中的三种情况"><span class="nav-number">1.1.</span> <span class="nav-text">this在js中的三种情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this指向总结"><span class="nav-number">1.2.</span> <span class="nav-text">this指向总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#call-apply-bind"><span class="nav-number">2.</span> <span class="nav-text">call-apply-bind</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#call方法和apply方法"><span class="nav-number">2.1.</span> <span class="nav-text">call方法和apply方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#相同点"><span class="nav-number">2.1.1.</span> <span class="nav-text">相同点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不同点"><span class="nav-number">2.1.2.</span> <span class="nav-text">不同点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#call的用法（apply相似不再详述）"><span class="nav-number">2.1.3.</span> <span class="nav-text">call的用法（apply相似不再详述）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bind方法"><span class="nav-number">2.2.</span> <span class="nav-text">bind方法</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["qzone","sqq","tsina","weixin","douban","linkedin","tieba","mail"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"2","bdPos":"left","bdTop":"197.5"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+        <p>友情链接：<a href="https://www.javacat.cn">javacat博客</a></p>
+          &copy; 2018 欢迎来到前端学习博客! All Rights Reserved.
+          
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var contentdiv = document.getElementById("content");
+
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+</script>
+
+<!-- Custome JS -->
+<script src="/./js/my.js"></script>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

@@ -166,8 +166,11 @@ table td {
 	line-height: 20px;
 	text-align: left;
 	vertical-align: top;
-	border-top: 1px solid #ddd;
+	border: 1px solid #ddd;
 	}
+table th{
+	border: 1px solid #4F4F4F;
+}
 table th {
 	font-weight: bold;
 	}
@@ -180,10 +183,10 @@ table colgroup + thead tr:first-child th,
 table colgroup + thead tr:first-child td,
 table thead:first-child tr:first-child th,
 table thead:first-child tr:first-child td {
-	border-top: 0;
+	border-top: 1px solid #ddd;
 	}
 table tbody + tbody {
-	border-top: 2px solid #ddd;
+	border-top: 1px solid #ddd;
 	}
 
 /* Make sure embeds and iframes fit their containers */

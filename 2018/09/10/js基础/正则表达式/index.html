@@ -26,7 +26,7 @@
 <meta property="og:site_name" content="欢迎来到前端学习博客!">
 <meta property="og:description" content="本章节介绍正则的相关知识，详细介绍了正则的基本概念、特性和应用  本文参考w3school文档">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-24T03:49:33.536Z">
+<meta property="og:updated_time" content="2018-09-25T07:26:01.190Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式">
 <meta name="twitter:description" content="本章节介绍正则的相关知识，详细介绍了正则的基本概念、特性和应用  本文参考w3school文档">
@@ -199,6 +199,10 @@ var themeMenus = {};
 <td style="text-align:left">m</td>
 <td style="text-align:left">执行多行匹配</td>
 </tr>
+<tr>
+<td style="text-align:left">s</td>
+<td style="text-align:left">正则中的 “.”会匹配所有字符，包括换行和结束符</td>
+</tr>
 </tbody>
 </table>
 <h3 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h3><table>
@@ -260,75 +264,75 @@ var themeMenus = {};
 <tbody>
 <tr>
 <td style="text-align:left">.</td>
-<td style="text-align:left">查找单个字符，除了换行和行结束符。</td>
+<td style="text-align:left">查找单个字符，除了换行和行结束符</td>
 </tr>
 <tr>
 <td style="text-align:left">\w</td>
-<td style="text-align:left">查找单词字符。</td>
+<td style="text-align:left">查找单词字符</td>
 </tr>
 <tr>
 <td style="text-align:left">\W</td>
-<td style="text-align:left">查找非单词字符。</td>
+<td style="text-align:left">查找非单词字符</td>
 </tr>
 <tr>
 <td style="text-align:left">\d</td>
-<td style="text-align:left">查找数字。</td>
+<td style="text-align:left">查找数字</td>
 </tr>
 <tr>
 <td style="text-align:left">\D</td>
-<td style="text-align:left">查找非数字字符。</td>
+<td style="text-align:left">查找非数字字符</td>
 </tr>
 <tr>
 <td style="text-align:left">\s</td>
-<td style="text-align:left">查找空白字符。</td>
+<td style="text-align:left">查找空白字符</td>
 </tr>
 <tr>
 <td style="text-align:left">\S</td>
-<td style="text-align:left">查找非空白字符。</td>
+<td style="text-align:left">查找非空白字符</td>
 </tr>
 <tr>
 <td style="text-align:left">\b</td>
-<td style="text-align:left">匹配单词边界。</td>
+<td style="text-align:left">匹配单词边界</td>
 </tr>
 <tr>
 <td style="text-align:left">\B</td>
-<td style="text-align:left">匹配非单词边界。</td>
+<td style="text-align:left">匹配非单词边界</td>
 </tr>
 <tr>
 <td style="text-align:left">\0</td>
-<td style="text-align:left">查找 NUL 字符。</td>
+<td style="text-align:left">查找 NUL 字符</td>
 </tr>
 <tr>
 <td style="text-align:left">\n</td>
-<td style="text-align:left">查找换行符。</td>
+<td style="text-align:left">查找换行符</td>
 </tr>
 <tr>
 <td style="text-align:left">\f</td>
-<td style="text-align:left">查找换页符。</td>
+<td style="text-align:left">查找换页符</td>
 </tr>
 <tr>
 <td style="text-align:left">\r</td>
-<td style="text-align:left">查找回车符。</td>
+<td style="text-align:left">查找回车符</td>
 </tr>
 <tr>
 <td style="text-align:left">\t</td>
-<td style="text-align:left">查找制表符。</td>
+<td style="text-align:left">查找制表符</td>
 </tr>
 <tr>
 <td style="text-align:left">\v</td>
-<td style="text-align:left">查找垂直制表符。</td>
+<td style="text-align:left">查找垂直制表符</td>
 </tr>
 <tr>
 <td style="text-align:left">\xxx</td>
-<td style="text-align:left">查找以八进制数 xxx 规定的字符。</td>
+<td style="text-align:left">查找以八进制数 xxx 规定的字符</td>
 </tr>
 <tr>
 <td style="text-align:left">\xdd</td>
-<td style="text-align:left">查找以十六进制数 dd 规定的字符。</td>
+<td style="text-align:left">查找以十六进制数 dd 规定的字符</td>
 </tr>
 <tr>
 <td style="text-align:left">\uxxxx</td>
-<td style="text-align:left">查找以十六进制数 xxxx 规定的 Unicode 字符。</td>
+<td style="text-align:left">查找以十六进制数 xxxx 规定的 Unicode 字符</td>
 </tr>
 </tbody>
 </table>
@@ -342,43 +346,69 @@ var themeMenus = {};
 <tbody>
 <tr>
 <td style="text-align:left">n+</td>
-<td style="text-align:left">匹配任何包含至少一个 n 的字符串。</td>
+<td style="text-align:left">匹配任何包含至少一个 n 的字符串</td>
 </tr>
 <tr>
 <td style="text-align:left">n*</td>
-<td style="text-align:left">匹配任何包含零个或多个 n 的字符串。</td>
+<td style="text-align:left">匹配任何包含零个或多个 n 的字符串</td>
 </tr>
 <tr>
 <td style="text-align:left">n?</td>
-<td style="text-align:left">匹配任何包含零个或一个 n 的字符串。</td>
+<td style="text-align:left">匹配任何包含零个或一个 n 的字符串</td>
 </tr>
 <tr>
 <td style="text-align:left">n{X}</td>
-<td style="text-align:left">匹配包含 X 个 n 的序列的字符串。</td>
+<td style="text-align:left">匹配包含 X 个 n 的序列的字符串</td>
 </tr>
 <tr>
 <td style="text-align:left">n{X,Y}</td>
-<td style="text-align:left">匹配包含 X 至 Y 个 n 的序列的字符串。</td>
+<td style="text-align:left">匹配包含 X 至 Y 个 n 的序列的字符串</td>
 </tr>
 <tr>
 <td style="text-align:left">n{X,}</td>
-<td style="text-align:left">匹配包含至少 X 个 n 的序列的字符串。</td>
+<td style="text-align:left">匹配包含至少 X 个 n 的序列的字符串</td>
 </tr>
 <tr>
 <td style="text-align:left">n$</td>
-<td style="text-align:left">匹配任何结尾为 n 的字符串。</td>
+<td style="text-align:left">匹配任何结尾为 n 的字符串</td>
 </tr>
 <tr>
 <td style="text-align:left">^n</td>
-<td style="text-align:left">匹配任何开头为 n 的字符串。</td>
+<td style="text-align:left">匹配任何开头为 n 的字符串</td>
 </tr>
 <tr>
 <td style="text-align:left">?=n</td>
-<td style="text-align:left">匹配任何其后紧接指定字符串 n 的字符串。</td>
+<td style="text-align:left">匹配任何其后紧接指定字符串 n 的字符串</td>
 </tr>
 <tr>
 <td style="text-align:left">?!n</td>
-<td style="text-align:left">匹配任何其后没有紧接指定字符串 n 的字符串。</td>
+<td style="text-align:left">匹配任何其后没有紧接指定字符串 n 的字符串</td>
+</tr>
+</tbody>
+</table>
+<h3 id="支持正则表达式的-String-对象的方法"><a href="#支持正则表达式的-String-对象的方法" class="headerlink" title="支持正则表达式的 String 对象的方法"></a>支持正则表达式的 String 对象的方法</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>search</td>
+<td>检索与正则表达式相匹配的值</td>
+</tr>
+<tr>
+<td>match</td>
+<td>找到一个或多个正则表达式的匹配</td>
+</tr>
+<tr>
+<td>replace</td>
+<td>替换与正则表达式匹配的子串</td>
+</tr>
+<tr>
+<td>split</td>
+<td>把字符串分割为字符串数组</td>
 </tr>
 </tbody>
 </table>
@@ -526,7 +556,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     
-      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式"><span class="nav-number">1.</span> <span class="nav-text">正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#正则含义"><span class="nav-number">1.1.</span> <span class="nav-text">正则含义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建正则"><span class="nav-number">1.2.</span> <span class="nav-text">创建正则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修饰符"><span class="nav-number">1.3.</span> <span class="nav-text">修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表达式"><span class="nav-number">1.4.</span> <span class="nav-text">表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元字符"><span class="nav-number">1.5.</span> <span class="nav-text">元字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#量词"><span class="nav-number">1.6.</span> <span class="nav-text">量词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理字符串"><span class="nav-number">1.7.</span> <span class="nav-text">处理字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则捕获"><span class="nav-number">1.8.</span> <span class="nav-text">正则捕获</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则分组"><span class="nav-number">1.9.</span> <span class="nav-text">正则分组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用正则"><span class="nav-number">2.</span> <span class="nav-text">常用正则</span></a></li></ol>
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式"><span class="nav-number">1.</span> <span class="nav-text">正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#正则含义"><span class="nav-number">1.1.</span> <span class="nav-text">正则含义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建正则"><span class="nav-number">1.2.</span> <span class="nav-text">创建正则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修饰符"><span class="nav-number">1.3.</span> <span class="nav-text">修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表达式"><span class="nav-number">1.4.</span> <span class="nav-text">表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元字符"><span class="nav-number">1.5.</span> <span class="nav-text">元字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#量词"><span class="nav-number">1.6.</span> <span class="nav-text">量词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#支持正则表达式的-String-对象的方法"><span class="nav-number">1.7.</span> <span class="nav-text">支持正则表达式的 String 对象的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理字符串"><span class="nav-number">1.8.</span> <span class="nav-text">处理字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则捕获"><span class="nav-number">1.9.</span> <span class="nav-text">正则捕获</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则分组"><span class="nav-number">1.10.</span> <span class="nav-text">正则分组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用正则"><span class="nav-number">2.</span> <span class="nav-text">常用正则</span></a></li></ol>
     
     </div>
   </aside>

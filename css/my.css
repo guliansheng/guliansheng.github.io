@@ -13,3 +13,20 @@ padding: 10px 15px;
 margin-top: 20px;
 color: #555;
 }
+#about- .entry-footer{
+  display:none;
+}
+#about- li{
+  line-height: 30px;
+  font-size: 16px;
+  color: #555;
+}
+.article-entry p{
+  margin:10px 0;
+}
+.article-entry .highlight .line{
+  line-height: 17px;
+}
+.article-entry blockquote p{
+  padding: 10px 10px;
+}

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- PACE Progress Bar START -->
+  
+  
+
+  <!-- PACE Progress Bar START -->
+
+  
+  <title>css常用知识点 | 欢迎来到前端学习博客!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="博客,html5,css3,javaScript,js,es6,jQuery,bootstrap,vue,webpack,hexo,guliansheng,初学者,网站,基础,前端学习,前端框架,前端知识总结" />
+  
+  
+  
+  
+  <meta name="description" content="本文是CSS知识的基础应用篇。">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS常用知识点">
+<meta property="og:url" content="http:&#x2F;&#x2F;www.guliansheng.club&#x2F;2018&#x2F;09&#x2F;14&#x2F;CSS&#x2F;css%E5%B8%B8%E7%94%A8%E7%9F%A5%E8%AF%86&#x2F;index.html">
+<meta property="og:site_name" content="欢迎来到前端学习博客!">
+<meta property="og:description" content="本文是CSS知识的基础应用篇。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-08T10:06:00.120Z">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="欢迎来到前端学习博客!" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/my.css">
+</head>
+
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "首页"; 
+
+  themeMenus["/categories"] = "分类"; 
+
+  themeMenus["/tags"] = "标签"; 
+
+  themeMenus["/archives"] = "归档"; 
+
+  themeMenus["/about"] = "关于"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  <header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="欢迎来到前端学习博客!" rel="home"> 非常规人类交流中心 </a>
+            
+          </h1>
+
+          
+            <div class="site-description">前端学习博客，主要以JavaScript为主进行展开，其中包括JavaScript基础和相关框架(jQuery、bootstrap、vue...)的讲解和使用，另外还有与前端相关知识的扩展，如git、github、webpack、hexo...</div>
+          
+
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+          <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+            <div class="clearfix sf-menu">
+
+              <ul id="main-nav" class="nmenu sf-js-enabled">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">首页</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">分类</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">标签</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">归档</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">关于</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+
+      </div>
+  </div>
+</header>
+
+
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-CSS/css常用知识" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      CSS常用知识点
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/09/14/CSS/css%E5%B8%B8%E7%94%A8%E7%9F%A5%E8%AF%86/" class="article-date">
+	  <time datetime="2018-09-14T11:28:52.000Z" itemprop="datePublished">2018-09-14</time>
+	</a>
+
+
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文是CSS知识的基础应用篇。</p>
+<a id="more"></a>
+
+<h4 id="1-flex-布局"><a href="#1-flex-布局" class="headerlink" title="1.flex 布局"></a>1.flex 布局</h4><blockquote>
+<p>display:flex; 在父元素设置，子元素受弹性盒影响，默认排成一行，如果超出一行，按比例压缩 flex:1; 子元素设置，设置子元素如何分配父元素的空间，flex:1, 子元素宽度占满整个父元素 align-items:center 定义子元素在父容器中的对齐方式，center 垂直居中 justify-content:center 设置子元素在父元素中居中，前提是子元素没有把父元素占满，让子元素水平居中。</p>
+</blockquote>
+<h4 id="2-css3-的新特性"><a href="#2-css3-的新特性" class="headerlink" title="2.css3 的新特性"></a>2.css3 的新特性</h4><blockquote>
+<p>transtion transition-property 规定设置过渡效果的 CSS 属性的名称。</p>
+</blockquote>
+<blockquote>
+<p>transition-duration 规定完成过渡效果需要多少秒或毫秒。</p>
+</blockquote>
+<blockquote>
+<p>transition-timing-function 规定速度效果的速度曲线。</p>
+</blockquote>
+<blockquote>
+<p>transition-delay 定义过渡效果何时开始。</p>
+</blockquote>
+<blockquote>
+<p>animation 属性可以像 Flash 制作动画一样，通过控制关键帧来控制动画的每一步，实现更为复杂的动画效果。</p>
+</blockquote>
+<blockquote>
+<p>ainimation 实现动画效果主要由两部分组成：</p>
+</blockquote>
+<blockquote>
+<p>通过类似 Flash 动画中的帧来声明一个动画；</p>
+</blockquote>
+<blockquote>
+<p>在 animation 属性中调用关键帧声明的动画。</p>
+</blockquote>
+<blockquote>
+<p>translate 3D 建模效果</p>
+</blockquote>
+<h4 id="3-img-中-alt-和-title-的区别"><a href="#3-img-中-alt-和-title-的区别" class="headerlink" title="3.img 中 alt 和 title 的区别"></a>3.img 中 alt 和 title 的区别</h4><blockquote>
+<p>图片中的 alt 属性是在图片不能正常显示时出现的文本提示。</p>
+</blockquote>
+<blockquote>
+<p>图片中的 title 属性是在鼠标在移动到元素上的文本提示。</p>
+</blockquote>
+<h4 id="4-用纯-CSS-创建一个三角形"><a href="#4-用纯-CSS-创建一个三角形" class="headerlink" title="4. 用纯 CSS 创建一个三角形"></a>4. 用纯 CSS 创建一个三角形</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> &lt;style&gt;</span><br><span class="line">    div &#123;</span><br><span class="line">        width: 0;</span><br><span class="line">        height: 0;</span><br><span class="line">        border-top: 40px solid transparent;</span><br><span class="line">        border-left: 40px solid transparent;</span><br><span class="line">        border-right: 40px solid transparent;</span><br><span class="line">        border-bottom: 40px solid #ff0000;</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-如何理解-CSS-的盒子模型？"><a href="#5-如何理解-CSS-的盒子模型？" class="headerlink" title="5. 如何理解 CSS 的盒子模型？"></a>5. 如何理解 CSS 的盒子模型？</h4><blockquote>
+<p>标准盒子模型：宽度 = 内容的宽度（content）+ border + padding</p>
+</blockquote>
+<blockquote>
+<p>低版本 IE 盒子模型：宽度 = 内容宽度（content+border+padding)</p>
+</blockquote>
+<h4 id="6-如何让一个-div-水平居中"><a href="#6-如何让一个-div-水平居中" class="headerlink" title="6. 如何让一个 div 水平居中"></a>6. 如何让一个 div 水平居中</h4><blockquote>
+<p>已知宽度，block 元素 ，添加添加 margin:0 auto 属性。</p>
+</blockquote>
+<blockquote>
+<p><mark>父级设置成 inline-block，其 margin: 0 auto 居中方式失效</mark></p>
+</blockquote>
+<blockquote>
+<p>已知宽度，绝对定位的居中 ，上下左右都为 0，margin: auto</p>
+</blockquote>
+<h4 id="7-如何让一个-div-水平垂直居中"><a href="#7-如何让一个-div-水平垂直居中" class="headerlink" title="7.如何让一个 div 水平垂直居中"></a>7.如何让一个 div 水平垂直居中</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">position: relative / fixed; /* 相对定位或绝对定位均可 */</span><br><span class="line">width:500px;</span><br><span class="line">height:300px;</span><br><span class="line">top: 50%;</span><br><span class="line">left: 50%;</span><br><span class="line">margin-top:-150px;</span><br><span class="line">margin-left:-250px;</span><br><span class="line"> 外边距为自身宽高的一半 */</span><br><span class="line">background-color: pink; /* 方便看效果 */</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">.container &#123;</span><br><span class="line">display: flex;</span><br><span class="line">align-items: center; /* 垂直居中 */</span><br><span class="line">justify-content: center; /* 水平居中 */</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line">.container div &#123;</span><br><span class="line">width: 100px; /* 可省 */</span><br><span class="line">height: 100px; /* 可省 */</span><br><span class="line">background-color: pink; /* 方便看效果 */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="8-如何清除浮动？"><a href="#8-如何清除浮动？" class="headerlink" title="8.如何清除浮动？"></a>8.如何清除浮动？</h4><blockquote>
+<p>clear 清除浮动（添加空 div 法）在浮动元素下方添加空 div, 并给该元素写 css 样式 {clear:both;height:0;overflow:hidden;}</p>
+</blockquote>
+<blockquote>
+<p>给浮动元素父级设置高度</p>
+</blockquote>
+<blockquote>
+<p>父级同时浮动（需要给父级同级元素添加浮动）</p>
+</blockquote>
+<blockquote>
+<p>给父级添加 overflow:hidden 清除浮动方法</p>
+</blockquote>
+<blockquote>
+<p>万能清除法 after 伪类 清浮动（现在主流方法，推荐使用）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">float_div:after&#123;</span><br><span class="line">content:&quot;.&quot;;</span><br><span class="line">clear:both;</span><br><span class="line">display:block;</span><br><span class="line">height:0;</span><br><span class="line">overflow:hidden;</span><br><span class="line">visibility:hidden;</span><br><span class="line">&#125;</span><br><span class="line">.float_div&#123;</span><br><span class="line">zoom:1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="9-css3-实现三栏布局，左右固定，中间自适应"><a href="#9-css3-实现三栏布局，左右固定，中间自适应" class="headerlink" title="9.css3 实现三栏布局，左右固定，中间自适应"></a>9.css3 实现三栏布局，左右固定，中间自适应</h4><blockquote>
+<p>圣杯布局 / 双飞翼布局</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"> &lt;style&gt;</span><br><span class="line">        * &#123;</span><br><span class="line">            margin: 0;</span><br><span class="line">            padding: 0;</span><br><span class="line">        &#125;</span><br><span class="line">        .middle,</span><br><span class="line">        .left,</span><br><span class="line">        .right &#123;</span><br><span class="line">            position: relative;</span><br><span class="line">            float: left;</span><br><span class="line">            min-height: 130px;</span><br><span class="line">        &#125;</span><br><span class="line">        .container &#123;</span><br><span class="line">            padding: 0 220px 0 200px;</span><br><span class="line">            overflow: hidden;</span><br><span class="line">        &#125;</span><br><span class="line">        .left &#123;</span><br><span class="line">            margin-left: -100%;</span><br><span class="line">            left: -200px;</span><br><span class="line">            width: 200px;</span><br><span class="line">            background: red;</span><br><span class="line">        &#125;</span><br><span class="line">        .right &#123;</span><br><span class="line">            margin-left: -220px;</span><br><span class="line">            right: -220px;</span><br><span class="line">            width: 220px;</span><br><span class="line">            background: green;</span><br><span class="line">        &#125;</span><br><span class="line">        .middle &#123;</span><br><span class="line">            width: 100%;</span><br><span class="line">            background: blue;</span><br><span class="line">            word-break: break-all;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&apos;container&apos;&gt;</span><br><span class="line">        &lt;div class=&apos;middle&apos;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class=&apos;left&apos;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class=&apos;right&apos;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="10-display-none-和-visibility-hidden-的区别"><a href="#10-display-none-和-visibility-hidden-的区别" class="headerlink" title="10.display:none 和 visibility: hidden 的区别"></a>10.display:none 和 visibility: hidden 的区别</h4><blockquote>
+<p>display:none 隐藏对应的元素，在文档布局中不再给它分配空间，它各边的元素会合拢，就当他从来不存在。</p>
+</blockquote>
+<blockquote>
+<p>visibility:hidden 隐藏对应的元素，但是在文档布局中仍保留原来的空间。</p>
+</blockquote>
+<h4 id="11-CSS-中-link-和-import-的区别是？"><a href="#11-CSS-中-link-和-import-的区别是？" class="headerlink" title="11.CSS 中 link 和 @import 的区别是？"></a>11.CSS 中 link 和 @import 的区别是？</h4><blockquote>
+<p>link 属于 HTML 标签，而 @import 是 CSS 提供的页面被加载的时，link 会同时被加载，而 @import 引用的 CSS 会等到页面被加载完再加载</p>
+</blockquote>
+<blockquote>
+<p>import 只在 IE5 以上才能识别，而 link 是 HTML 标签，无兼容问题</p>
+</blockquote>
+<blockquote>
+<p><mark>link 方式的样式的权重 高于 @import 的权重.</mark></p>
+</blockquote>
+<h4 id="12-position-的-absolute-与-fixed-共同点与不同点"><a href="#12-position-的-absolute-与-fixed-共同点与不同点" class="headerlink" title="12.position 的 absolute 与 fixed 共同点与不同点"></a>12.position 的 absolute 与 fixed 共同点与不同点</h4><blockquote>
+<p>共同点： 改变行内元素的呈现方式，display 被置为 block 让元素脱离普通流，不占据空间 默认会覆盖到非定位元素上</p>
+</blockquote>
+<blockquote>
+<p>不同点： absolute 的” 根元素 “是可以设置的 fixed 的” 根元素 “固定为浏览器窗口。当你滚动网页，fixed 元素与浏览器窗口之间的距离是不变的。</p>
+</blockquote>
+<h4 id="13-transition-和-animation-的区别"><a href="#13-transition-和-animation-的区别" class="headerlink" title="13..transition 和 animation 的区别"></a>13..transition 和 animation 的区别</h4><blockquote>
+<p>Animation 和 transition 大部分属性是相同的，他们都是随时间改变元素的属性值，他们的主要区别是 transition 需要触发一个事件才能改变属性， 而 animation 不需要触发任何事件的情况下才会随时间改变属性值，并且 transition 为 2 帧，从 from …. to，而 animation 可以一帧一帧的。</p>
+</blockquote>
+<blockquote>
+<p>transition 规定动画的名字 规定完成过渡效果需要多少秒或毫秒 规定速度效果 定义过渡效果何时开始 animation 指定要绑定到选择器的关键帧的名称</p>
+</blockquote>
+<h4 id="14-CSS-优先级"><a href="#14-CSS-优先级" class="headerlink" title="14.CSS 优先级"></a>14.CSS 优先级</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">不同级别：总结排序：!important &gt; 行内样式&gt;ID选择器 &gt; 类选择器 &gt; 标签 &gt; 通配符 &gt; 继承 &gt; 浏览器默认属性</span><br><span class="line">	1.属性后面加!import 会覆盖页面内任何位置定义的元素样式</span><br><span class="line">	2.作为style属性写在元素内的样式</span><br><span class="line">	3.id选择器</span><br><span class="line">	4.类选择器</span><br><span class="line">	5.标签选择器</span><br><span class="line">	6.通配符选择器（*）</span><br><span class="line">	7.浏览器自定义或继承</span><br><span class="line">**同一级别：后写的会覆盖先写的**</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>css 选择器的解析原则：选择器定位 DOM 元素是从右往左的方向，这样可以尽早的过滤掉一些不必要的样式规则和元素</p>
+</blockquote>
+<h4 id="15-雪碧图："><a href="#15-雪碧图：" class="headerlink" title="15. 雪碧图："></a>15. 雪碧图：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">   多个图片集成在一个图片中的图</span><br><span class="line">使用雪碧图可以减少网络请求的次数，加快允许的速度</span><br><span class="line">通过background-position，去定位图片在屏幕的哪个位置</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li></ul>
+
+      
+
+      <div class = 'my_author'>
+        <p><strong style = 'color:#333'>本文作者：</strong>guliansheng</p>
+        <p><strong style = 'color:#333'>版权声明：</strong>本博客所有文章除特别声明外，其余文章转载请注明出处！</p>
+      </div>
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: '打赏支持', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'http://www.guliansheng.club/img/blog/collection/weixin.jpg',
+  alipayImage: 'http://www.guliansheng.club/img/blog/collection/zhifubao2.jpg'
+});
+</script>
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/09/19/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/this%E5%85%B3%E9%94%AE%E5%AD%97/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          this关键字
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/13/webpack/webpack/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">webpack</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-flex-布局"><span class="nav-number">1.</span> <span class="nav-text">1.flex 布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-css3-的新特性"><span class="nav-number">2.</span> <span class="nav-text">2.css3 的新特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-img-中-alt-和-title-的区别"><span class="nav-number">3.</span> <span class="nav-text">3.img 中 alt 和 title 的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-用纯-CSS-创建一个三角形"><span class="nav-number">4.</span> <span class="nav-text">4. 用纯 CSS 创建一个三角形</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-如何理解-CSS-的盒子模型？"><span class="nav-number">5.</span> <span class="nav-text">5. 如何理解 CSS 的盒子模型？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-如何让一个-div-水平居中"><span class="nav-number">6.</span> <span class="nav-text">6. 如何让一个 div 水平居中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-如何让一个-div-水平垂直居中"><span class="nav-number">7.</span> <span class="nav-text">7.如何让一个 div 水平垂直居中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-如何清除浮动？"><span class="nav-number">8.</span> <span class="nav-text">8.如何清除浮动？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-css3-实现三栏布局，左右固定，中间自适应"><span class="nav-number">9.</span> <span class="nav-text">9.css3 实现三栏布局，左右固定，中间自适应</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-display-none-和-visibility-hidden-的区别"><span class="nav-number">10.</span> <span class="nav-text">10.display:none 和 visibility: hidden 的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-CSS-中-link-和-import-的区别是？"><span class="nav-number">11.</span> <span class="nav-text">11.CSS 中 link 和 @import 的区别是？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-position-的-absolute-与-fixed-共同点与不同点"><span class="nav-number">12.</span> <span class="nav-text">12.position 的 absolute 与 fixed 共同点与不同点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-transition-和-animation-的区别"><span class="nav-number">13.</span> <span class="nav-text">13..transition 和 animation 的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-CSS-优先级"><span class="nav-number">14.</span> <span class="nav-text">14.CSS 优先级</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15-雪碧图："><span class="nav-number">15.</span> <span class="nav-text">15. 雪碧图：</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["qzone","sqq","tsina","weixin","douban","linkedin","tieba","mail"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"2","bdPos":"left","bdTop":"197.5"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+        <p>友情链接：<a href="http://javacat.cn" target="_blank" rel="noopener">javacat博客</a></p>
+          &copy; 2018 欢迎来到前端学习博客! All Rights Reserved.
+          
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var contentdiv = document.getElementById("content");
+
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+</script>
+
+<!-- Custome JS -->
+<script src="/./js/my.js"></script>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="https://dnqof95d40fo6.cloudfront.net/atw7f8.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

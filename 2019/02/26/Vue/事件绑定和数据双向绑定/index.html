@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- PACE Progress Bar START -->
+  
+  
+
+  <!-- PACE Progress Bar START -->
+
+  
+  <title>事件绑定及双向数据绑定 | 欢迎来到前端学习博客!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="博客,html5,css3,javaScript,js,es6,jQuery,bootstrap,vue,webpack,hexo,guliansheng,初学者,网站,基础,前端学习,前端框架,前端知识总结" />
+  
+  
+  
+  
+  <meta name="description" content="事件绑定及双向数据绑定1. 事件绑定基础 事件函数不需要传参时,不要加(),因为vue中的函数中会自动传入event对象,如果加了()时,event会变成undefined;当需要传参时,event对象用参数$event来代替,再传入其他参数  123456789101112131415161718192021222324252627282930313233343536373839404142">
+<meta name="keywords" content="vue事件绑定,vue双向数据绑定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="事件绑定及双向数据绑定">
+<meta property="og:url" content="http:&#x2F;&#x2F;www.guliansheng.club&#x2F;2019&#x2F;02&#x2F;26&#x2F;Vue&#x2F;%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A%E5%92%8C%E6%95%B0%E6%8D%AE%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A&#x2F;index.html">
+<meta property="og:site_name" content="欢迎来到前端学习博客!">
+<meta property="og:description" content="事件绑定及双向数据绑定1. 事件绑定基础 事件函数不需要传参时,不要加(),因为vue中的函数中会自动传入event对象,如果加了()时,event会变成undefined;当需要传参时,event对象用参数$event来代替,再传入其他参数  123456789101112131415161718192021222324252627282930313233343536373839404142">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-02-26T11:20:43.447Z">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="欢迎来到前端学习博客!" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/my.css">
+</head>
+
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "首页"; 
+
+  themeMenus["/categories"] = "分类"; 
+
+  themeMenus["/tags"] = "标签"; 
+
+  themeMenus["/archives"] = "归档"; 
+
+  themeMenus["/about"] = "关于"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  <header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="欢迎来到前端学习博客!" rel="home"> 非常规人类交流中心 </a>
+            
+          </h1>
+
+          
+            <div class="site-description">前端学习博客，主要以JavaScript为主进行展开，其中包括JavaScript基础和相关框架(jQuery、bootstrap、vue...)的讲解和使用，另外还有与前端相关知识的扩展，如git、github、webpack、hexo...</div>
+          
+
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+          <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+            <div class="clearfix sf-menu">
+
+              <ul id="main-nav" class="nmenu sf-js-enabled">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">首页</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">分类</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">标签</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">归档</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">关于</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+
+      </div>
+  </div>
+</header>
+
+
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Vue/事件绑定和数据双向绑定" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      事件绑定及双向数据绑定
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2019/02/26/Vue/%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A%E5%92%8C%E6%95%B0%E6%8D%AE%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A/" class="article-date">
+	  <time datetime="2019-02-26T10:11:57.000Z" itemprop="datePublished">2019-02-26</time>
+	</a>
+
+
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+
+<h1 id="事件绑定及双向数据绑定"><a href="#事件绑定及双向数据绑定" class="headerlink" title="事件绑定及双向数据绑定"></a>事件绑定及双向数据绑定</h1><h2 id="1-事件绑定基础"><a href="#1-事件绑定基础" class="headerlink" title="1. 事件绑定基础"></a>1. 事件绑定基础</h2><ul>
+<li>事件函数不需要传参时,不要加(),因为vue中的函数中会自动传入event对象,如果加了()时,event会变成undefined;当需要传参时,event对象用参数$event来代替,再传入其他参数</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box2</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">width</span><span class="selector-pseudo">:400px</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">height</span><span class="selector-pseudo">:400px</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border</span><span class="selector-pseudo">:2px</span> <span class="selector-tag">solid</span> <span class="selector-id">#ccc</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">margin</span><span class="selector-pseudo">:50px</span> <span class="selector-tag">auto</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">text-align</span><span class="selector-pseudo">:center</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">padding</span><span class="selector-pseudo">:20px</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">'show(40)'</span>&gt;</span>点击翻转<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:dblclick</span>=<span class="string">'show(30)'</span>&gt;</span>点击翻转<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> &gt;</span>&#123;&#123;message&#125;&#125;&#123;&#123;num&#125;&#125;&#123;&#123;event2()&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> @<span class="attr">click</span>=<span class="string">'event'</span>&gt;</span>event不加括号<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> @<span class="attr">click</span>=<span class="string">"event($event,1,'传参')"</span>&gt;</span>event传参<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> @<span class="attr">click</span>=<span class="string">'event2'</span>&gt;</span>event2不加括号<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> @<span class="attr">click</span>=<span class="string">'event2()'</span>&gt;</span>event2加括号<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- v-on可以写成@ --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box2"</span> @<span class="attr">mousemove</span>=<span class="string">'move(40)'</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>client:&#123;&#123;cx&#125;&#125;,&#123;&#123;cy&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>offset:&#123;&#123;ox&#125;&#125;,&#123;&#123;oy&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>screen:&#123;&#123;sx&#125;&#125;,&#123;&#123;sy&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>page:&#123;&#123;px&#125;&#125;,&#123;&#123;py&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> @<span class="attr">mousemove</span>=<span class="string">'stop'</span> <span class="attr">style</span>=<span class="string">'background: #f56778'</span>&gt;</span>stop<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> vm=<span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el:<span class="string">'.box'</span>,</span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="actionscript">            message:<span class="string">'这是一个测试'</span>,</span></span><br><span class="line">            num:40,</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line"><span class="actionscript">            <span class="comment">//这里的方法不能用箭头函数</span></span></span><br><span class="line">            show(ev)&#123;</span><br><span class="line"><span class="actionscript">                <span class="comment">//this指向vm根实例</span></span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.num+=ev;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.message = <span class="keyword">this</span>.message.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span></span><br><span class="line">            &#125;,</span><br><span class="line">            event(event,a,b)&#123;</span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(event);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(a);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(b);</span></span><br><span class="line">            &#125;,</span><br><span class="line">            event2()&#123;</span><br><span class="line"><span class="actionscript">                <span class="comment">//如果不需要传参时,内部event就是事件源,时间函数中不要加括号,否则event为undefined;</span></span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(event);</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> vue2=<span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el:<span class="string">'.box2'</span>,</span></span><br><span class="line">        data:&#123;</span><br><span class="line">            cx:0,</span><br><span class="line">            cy:0,</span><br><span class="line">            ox:0,</span><br><span class="line">            oy:0,</span><br><span class="line">            sx:0,</span><br><span class="line">            sy:0,</span><br><span class="line">            px:0,</span><br><span class="line">            py:0,</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            move(num)&#123;</span><br><span class="line"><span class="javascript">                ev=<span class="built_in">window</span>.event || <span class="built_in">arguments</span>.callee.caller.arguments[<span class="number">0</span>];</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.cx=ev.clientX;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.cy=ev.clientY;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.ox=ev.offsetX;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.oy=ev.offsetY;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.sx=ev.screenX;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.sy=ev.screenY;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.px=ev.pageX;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.py=ev.pageY;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(num,ev.target);</span></span><br><span class="line">            &#125;,</span><br><span class="line">            stop(ev)&#123;</span><br><span class="line"><span class="actionscript">                <span class="comment">//阻止冒泡事件</span></span></span><br><span class="line">                ev.stopPropagation();</span><br><span class="line"><span class="actionscript">                <span class="comment">// 阻止浏览器默认行为：e.preventDefault();</span></span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-双向数据绑定"><a href="#2-双向数据绑定" class="headerlink" title="2. 双向数据绑定"></a>2. 双向数据绑定</h2><ul>
+<li>仅限于HTML表单输入或选择元素元素，<code>&lt;input&gt;</code>、<code>&lt;select&gt;</code> 、<code>&lt;textarea&gt;</code></li>
+<li>修饰符：<ul>
+<li><code>.lazy</code> 取代 <code>input</code> 监听 <code>change</code> 事件</li>
+<li><code>.number</code> 输入字符串转为有效的数字</li>
+<li><code>.trim</code>  输入首尾空格过滤</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- vue会忽表单元素的value,checked,selected属性; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">v-model.lazy</span>=<span class="string">'msg'</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">v-model.number</span>=<span class="string">'num'</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">v-model.number.trim</span>=<span class="string">'num'</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-html</span>=<span class="string">'msg'</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- v-once只绑定一次数据,不会受到后续的改变 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-once</span> <span class="attr">v-html</span>=<span class="string">'msg'</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>  <span class="attr">v-html</span>=<span class="string">'num'</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>只有一个复选框<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 当复选框只有一个时,可以直接使用true和false来控制选中和未选中状态; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">v-model</span>=<span class="string">'checked'</span> <span class="attr">value</span>=<span class="string">"篮球"</span>&gt;</span>篮球</span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;checked&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>多个复选框<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 当有多个复选框时,需要使用数组存放复选框的value值,用来控制相应的选中和非选中状态 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"ch"</span> <span class="attr">v-model</span>=<span class="string">'checked2'</span> <span class="attr">value</span>=<span class="string">"篮球"</span>&gt;</span>篮球<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"ch"</span> <span class="attr">v-model</span>=<span class="string">'checked2'</span> <span class="attr">value</span>=<span class="string">"足球"</span>&gt;</span>足球<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"ch"</span> <span class="attr">id</span>=<span class="string">'ch'</span> <span class="attr">v-model</span>=<span class="string">'checked2'</span> <span class="attr">value</span>=<span class="string">"电影"</span>&gt;</span><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"ch"</span>&gt;</span>电影<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"ch"</span> <span class="attr">v-model</span>=<span class="string">'checked2'</span> <span class="attr">value</span>=<span class="string">"唱歌"</span>&gt;</span>唱歌</span><br><span class="line">        <span class="comment">&lt;!-- &lt;p&gt;&lt;input type="checkbox" name="" v-model='checked2' value="全选/全不选"&gt;全选/全不选&lt;/p&gt; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;checked2&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click.prevent</span>=<span class="string">'checkSubmit'</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>单选框<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">v-model</span>=<span class="string">'radio'</span> <span class="attr">name</span>=<span class="string">"ra"</span> <span class="attr">value</span>=<span class="string">"篮球"</span>&gt;</span>篮球</span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">v-model</span>=<span class="string">'radio'</span> <span class="attr">name</span>=<span class="string">"ra"</span> <span class="attr">value</span>=<span class="string">"足球"</span>&gt;</span>足球</span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">v-model</span>=<span class="string">'radio'</span> <span class="attr">name</span>=<span class="string">"ra"</span> <span class="attr">value</span>=<span class="string">"电影"</span>&gt;</span>电影</span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">v-model</span>=<span class="string">'radio'</span> <span class="attr">name</span>=<span class="string">"ra"</span> <span class="attr">value</span>=<span class="string">"唱歌"</span>&gt;</span>唱歌</span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;radio&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>正常绑定下拉框<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span> = <span class="string">""</span>  <span class="attr">v-model</span> = <span class="string">'select'</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 这里需要有一个value为空的选项,否则页面无法获取第一项 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">disabled</span>&gt;</span>请选择<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"篮球"</span>&gt;</span>篮球<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"足球"</span>&gt;</span>足球<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"电影"</span>&gt;</span>电影<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"唱歌"</span>&gt;</span>唱歌<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;select&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>循环option的下拉框<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">""</span>  <span class="attr">v-model</span>=<span class="string">'select2'</span> <span class="attr">multiple</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 循环时,如果option有disabled属性才会循环,否则不会循环出来 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">v-for</span> = <span class="string">'(option,index) in option'</span> <span class="attr">v-bind:value</span> = <span class="string">'option.value'</span> <span class="attr">v-bind:disabled</span> = <span class="string">'option.disabled'</span> <span class="attr">:key</span> = <span class="string">'index'</span>&gt;</span>&#123;&#123;option.text&#125;&#125;<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;select2&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el:<span class="string">'#app'</span>,</span></span><br><span class="line">        data:&#123;</span><br><span class="line">            num:47,</span><br><span class="line"><span class="actionscript">            msg:<span class="string">'这是双向绑定的数据'</span>,</span></span><br><span class="line"><span class="actionscript">            checked:<span class="literal">true</span>, <span class="comment">//单个复选框</span></span></span><br><span class="line"><span class="actionscript">            checked2:[<span class="string">'足球'</span>], <span class="comment">//多个复选框</span></span></span><br><span class="line"><span class="actionscript">            radio:<span class="string">''</span>, <span class="comment">//单选框</span></span></span><br><span class="line"><span class="actionscript">            select:<span class="string">''</span>, <span class="comment">//单选选择框</span></span></span><br><span class="line"><span class="actionscript">            select2:[<span class="string">'篮球'</span>], <span class="comment">//多选选择框</span></span></span><br><span class="line">            option:[</span><br><span class="line"><span class="actionscript">                &#123;text:<span class="string">'请选择'</span>,value:<span class="string">'请选择'</span>,disabled:<span class="string">'disabled'</span>&#125;,</span></span><br><span class="line"><span class="actionscript">                &#123;text:<span class="string">'篮球'</span>,value:<span class="string">'篮球'</span>&#125;,</span></span><br><span class="line"><span class="actionscript">                &#123;text:<span class="string">'足球'</span>,value:<span class="string">'足球'</span>&#125;,</span></span><br><span class="line"><span class="actionscript">                &#123;text:<span class="string">'电影'</span>,value:<span class="string">'电影'</span>&#125;,</span></span><br><span class="line"><span class="actionscript">                &#123;text:<span class="string">'唱歌'</span>,value:<span class="string">'唱歌'</span>&#125;,</span></span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line"><span class="actionscript">            <span class="comment">//判断多个复选框的选项是否只有篮球和足球</span></span></span><br><span class="line">            checkSubmit()&#123;</span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.checked2.includes(<span class="string">'篮球'</span>) &amp;&amp; <span class="keyword">this</span>.checked2.includes(<span class="string">'足球'</span>) &amp;&amp; <span class="keyword">this</span>.checked2.length==<span class="number">2</span> ? alert(<span class="string">'yes'</span>) : alert(<span class="string">'no!'</span>);</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/vue%E5%9F%BA%E7%A1%80/">vue基础</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A/" rel="tag">vue事件绑定</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/" rel="tag">vue双向数据绑定</a></li></ul>
+
+      
+
+      <div class = 'my_author'>
+        <p><strong style = 'color:#333'>本文作者：</strong>guliansheng</p>
+        <p><strong style = 'color:#333'>版权声明：</strong>本博客所有文章除特别声明外，其余文章转载请注明出处！</p>
+      </div>
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: '打赏支持', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'http://www.guliansheng.club/img/blog/collection/weixin.jpg',
+  alipayImage: 'http://www.guliansheng.club/img/blog/collection/zhifubao2.jpg'
+});
+</script>
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/06/08/bootstrap/bootstrap3%E5%BF%AB%E9%80%9F%E8%B0%83%E7%94%A810/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          bootstrap3快速调用10
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/02/23/Vue/vue%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Vue初始化及基本指令</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#事件绑定及双向数据绑定"><span class="nav-number">1.</span> <span class="nav-text">事件绑定及双向数据绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-事件绑定基础"><span class="nav-number">1.1.</span> <span class="nav-text">1. 事件绑定基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-双向数据绑定"><span class="nav-number">1.2.</span> <span class="nav-text">2. 双向数据绑定</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["qzone","sqq","tsina","weixin","douban","linkedin","tieba","mail"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"2","bdPos":"left","bdTop":"197.5"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+        <p>友情链接：<a href="http://javacat.cn" target="_blank" rel="noopener">javacat博客</a></p>
+          &copy; 2019 欢迎来到前端学习博客! All Rights Reserved.
+          
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var contentdiv = document.getElementById("content");
+
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+</script>
+
+<!-- Custome JS -->
+<script src="/./js/my.js"></script>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="https://dnqof95d40fo6.cloudfront.net/atw7f8.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

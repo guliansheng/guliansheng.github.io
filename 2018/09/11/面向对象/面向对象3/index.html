@@ -22,14 +22,12 @@
 <meta name="keywords" content="面向对象,继承">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面向对象3">
-<meta property="og:url" content="http://www.guliansheng.club/2018/09/11/面向对象/面向对象3/index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;www.guliansheng.club&#x2F;2018&#x2F;09&#x2F;11&#x2F;%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1&#x2F;%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A13&#x2F;index.html">
 <meta property="og:site_name" content="欢迎来到前端学习博客!">
 <meta property="og:description" content="本篇章讲述的是js中的面向对象编程，第三节主要介绍多种形式的继承">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-09-19T07:54:36.055Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面向对象3">
-<meta name="twitter:description" content="本篇章讲述的是js中的面向对象编程，第三节主要介绍多种形式的继承">
   
     <link rel="alternate" href="/atom.xml" title="欢迎来到前端学习博客!" type="application/atom+xml">
   
@@ -136,7 +134,7 @@ var themeMenus = {};
     
     <div class="article-meta">
       
-	Posted on <a href="/2018/09/11/面向对象/面向对象3/" class="article-date">
+	Posted on <a href="/2018/09/11/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A13/" class="article-date">
 	  <time datetime="2018-09-11T02:51:04.000Z" itemprop="datePublished">2018-09-11</time>
 	</a>
 
@@ -149,7 +147,8 @@ var themeMenus = {};
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本篇章讲述的是js中的面向对象编程，第三节主要介绍多种形式的继承<br><a id="more"></a></p>
+        <p>本篇章讲述的是js中的面向对象编程，第三节主要介绍多种形式的继承</p>
+<a id="more"></a>
 <h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><h3 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h3><ul>
 <li><p>“原型继承”是我们JS中最常用的一种继承方式</p>
 </li>
@@ -161,9 +160,12 @@ var themeMenus = {};
 </li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'this is A'</span>;</span><br><span class="line">&#125;</span><br><span class="line">A.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'this is B'</span>;</span><br><span class="line">&#125;</span><br><span class="line">B.prototype = <span class="keyword">new</span> A;</span><br><span class="line">B.prototype.constructor = B;</span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> B;</span><br><span class="line"><span class="built_in">console</span>.dir(b.getName())</span><br></pre></td></tr></table></figure>
+
 <h3 id="call继承"><a href="#call继承" class="headerlink" title="call继承"></a>call继承</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'this is A'</span>;</span><br><span class="line">&#125;</span><br><span class="line">A.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    A.call(<span class="keyword">this</span>);<span class="comment">//将父类的私有属性和方法克隆一份,作为子类的私有属性和方法</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> B;</span><br><span class="line"><span class="built_in">console</span>.dir(b.getName())</span><br></pre></td></tr></table></figure>
+
 <h3 id="冒充对象继承"><a href="#冒充对象继承" class="headerlink" title="冒充对象继承"></a>冒充对象继承</h3><ul>
 <li>把父类私有的和公有的属性和方法克隆一份,作为子类的私有的属性和方法<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'this is A'</span>;</span><br><span class="line">&#125;</span><br><span class="line">A.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">C</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> temp = <span class="keyword">new</span> A;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> temp)&#123;</span><br><span class="line">        <span class="keyword">this</span>.[key] = temp[key];</span><br><span class="line">    &#125;</span><br><span class="line">    temp = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> C;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="混合模式继承"><a href="#混合模式继承" class="headerlink" title="混合模式继承"></a>混合模式继承</h3><ul>
@@ -171,6 +173,7 @@ var themeMenus = {};
 </li>
 <li><p>将父类私有的属性和方法克隆到子类的私有中,再将父类的私有和公有属性和方法添加到子类的公有中</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'this is A'</span>;</span><br><span class="line">&#125;</span><br><span class="line">A.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    A.call(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line">B.prototype = <span class="keyword">new</span> A;</span><br><span class="line">B.prototype.constructor = B;</span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> B;</span><br><span class="line"><span class="built_in">console</span>.dir(b.name)</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="寄生组合式继承"><a href="#寄生组合式继承" class="headerlink" title="寄生组合式继承"></a>寄生组合式继承</h3><ul>
@@ -180,6 +183,7 @@ var themeMenus = {};
 </li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'this is A'</span>;</span><br><span class="line">&#125;</span><br><span class="line">A.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    A.call(<span class="keyword">this</span>);<span class="comment">//将父类的私有属性和方法克隆一份,作为子类的私有属性和方法</span></span><br><span class="line">&#125;</span><br><span class="line">B.prototype = <span class="built_in">Object</span>.create(A.prototype);</span><br><span class="line">B.prototype.constructor = B;</span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> B;</span><br><span class="line"><span class="built_in">console</span>.dir(b);</span><br></pre></td></tr></table></figure>
+
 <h3 id="中间类继承法"><a href="#中间类继承法" class="headerlink" title="中间类继承法"></a>中间类继承法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">avgFn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>)</span><br><span class="line">    <span class="built_in">arguments</span>.__proto__ = <span class="built_in">Array</span>.prototype; <span class="comment">//</span></span><br><span class="line">    <span class="built_in">arguments</span>.sort(<span class="function"><span class="keyword">function</span> (<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span> a-b;&#125;);</span><br><span class="line">    <span class="built_in">arguments</span>.pop();</span><br><span class="line">    <span class="built_in">arguments</span>.shift();</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">eval</span>(<span class="built_in">arguments</span>.join(<span class="string">"+"</span>))/<span class="built_in">arguments</span>.length;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(avgFn(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">10</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="number">40</span>))</span><br></pre></td></tr></table></figure>
 
       
@@ -187,11 +191,11 @@ var themeMenus = {};
     <footer class="entry-meta entry-footer">
       
 	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/JavaScript面向对象/">JavaScript面向对象</a>
+    <a class="article-category-link" href="/categories/JavaScript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">JavaScript面向对象</a>
 
       
   <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/继承/">继承</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BB%A7%E6%89%BF/" rel="tag">继承</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="tag">面向对象</a></li></ul>
 
       
 
@@ -243,7 +247,7 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2018/09/11/面向对象/面向对象4/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/11/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A14/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
@@ -253,7 +257,7 @@ var a = new Donate({
     </a>
   
   
-    <a href="/2018/09/11/面向对象/原型链和数据类型检测/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/09/11/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
       <div class="article-nav-title">原型链和数据类型检测</div>
     </a>
@@ -283,8 +287,8 @@ var a = new Donate({
 
   <div class="clearfix container">
       <div class="site-info">
-        <p>友情链接：<a href="http://javacat.cn">javacat博客</a></p>
-          &copy; 2018 欢迎来到前端学习博客! All Rights Reserved.
+        <p>友情链接：<a href="http://javacat.cn" target="_blank" rel="noopener">javacat博客</a></p>
+          &copy; 2019 欢迎来到前端学习博客! All Rights Reserved.
           
             <span id="busuanzi_container_site_uv">
               本站访客数<span id="busuanzi_value_site_uv"></span>人次

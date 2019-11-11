@@ -22,14 +22,12 @@
 <meta name="keywords" content="js基础,正则表达式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="正则表达式">
-<meta property="og:url" content="http://www.guliansheng.club/2018/09/10/js基础/正则表达式/index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;www.guliansheng.club&#x2F;2018&#x2F;09&#x2F;10&#x2F;js%E5%9F%BA%E7%A1%80&#x2F;%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F&#x2F;index.html">
 <meta property="og:site_name" content="欢迎来到前端学习博客!">
 <meta property="og:description" content="本章节介绍正则的相关知识，详细介绍了正则的基本概念、特性和应用  本文参考W3School文档">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-09-30T07:03:54.254Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="正则表达式">
-<meta name="twitter:description" content="本章节介绍正则的相关知识，详细介绍了正则的基本概念、特性和应用  本文参考W3School文档">
   
     <link rel="alternate" href="/atom.xml" title="欢迎来到前端学习博客!" type="application/atom+xml">
   
@@ -136,7 +134,7 @@ var themeMenus = {};
     
     <div class="article-meta">
       
-	Posted on <a href="/2018/09/10/js基础/正则表达式/" class="article-date">
+	Posted on <a href="/2018/09/10/js%E5%9F%BA%E7%A1%80/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="article-date">
 	  <time datetime="2018-09-10T13:07:06.000Z" itemprop="datePublished">2018-09-10</time>
 	</a>
 
@@ -151,8 +149,9 @@ var themeMenus = {};
       
         <p>本章节介绍正则的相关知识，详细介绍了正则的基本概念、特性和应用</p>
 <blockquote>
-<p>本文参考<a href="http://www.w3school.com.cn/jsref/jsref_obj_regexp.asp" target="_blank" rel="noopener">W3School</a>文档<br><a id="more"></a></p>
+<p>本文参考<a href="http://www.w3school.com.cn/jsref/jsref_obj_regexp.asp" target="_blank" rel="noopener">W3School</a>文档</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><h3 id="正则含义"><a href="#正则含义" class="headerlink" title="正则含义"></a>正则含义</h3><ul>
 <li>它就是一个规则,用来处理字符串的一个规则</li>
 </ul>
@@ -165,221 +164,210 @@ var themeMenus = {};
 </li>
 <li><p>正则两种创建方式是有区别的</p>
 <ul>
-<li><p>在字面量方式中 , ‘//’之间包起来的所有 内容都是元字符,有的具有特殊的意义,大部分都是代表本身含义的普通元字符</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'gu'</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^\d+"+name+"\d+$/</span>;<span class="comment">//并不是字符串拼接</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'200gu222'</span>)) <span class="comment">//-&gt;flase</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'200'</span><span class="string">''</span>guuu<span class="string">'222)) //-&gt;true</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">//所以这种需求只能用实例方式创建</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">var name = '</span>gu<span class="string">';</span></span><br><span class="line"><span class="string">reg = new RegExp("^\\d+"+name+"\\d+$","g");//这种方式创建时要注意转义字符</span></span><br><span class="line"><span class="string">console.log(reg.test('</span><span class="number">200</span>gu222<span class="string">')) //-&gt;true;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>字面量中直接写\d就可以了,实例方式中需要转义 \\d</p>
-</li>
+<li>在字面量方式中 , ‘//’之间包起来的所有 内容都是元字符,有的具有特殊的意义,大部分都是代表本身含义的普通元字符<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'gu'</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^\d+"+name+"\d+$/</span>;<span class="comment">//并不是字符串拼接</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'200gu222'</span>)) <span class="comment">//-&gt;flase</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'200'</span><span class="string">''</span>guuu<span class="string">'222)) //-&gt;true</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">//所以这种需求只能用实例方式创建</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">var name = '</span>gu<span class="string">';</span></span><br><span class="line"><span class="string">reg = new RegExp("^\\d+"+name+"\\d+$","g");//这种方式创建时要注意转义字符</span></span><br><span class="line"><span class="string">console.log(reg.test('</span><span class="number">200</span>gu222<span class="string">')) //-&gt;true;</span></span><br></pre></td></tr></table></figure></li>
+<li>字面量中直接写\d就可以了,实例方式中需要转义 \\d</li>
 </ul>
 </li>
 </ul>
 <h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><table>
 <thead>
 <tr>
-<th style="text-align:left">修饰符</th>
-<th style="text-align:left">说明</th>
+<th align="left">修饰符</th>
+<th align="left">说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">i</td>
-<td style="text-align:left">执行对大小写不敏感的匹配</td>
+<tbody><tr>
+<td align="left">i</td>
+<td align="left">执行对大小写不敏感的匹配</td>
 </tr>
 <tr>
-<td style="text-align:left">g</td>
-<td style="text-align:left">执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）</td>
+<td align="left">g</td>
+<td align="left">执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）</td>
 </tr>
 <tr>
-<td style="text-align:left">m</td>
-<td style="text-align:left">执行多行匹配</td>
+<td align="left">m</td>
+<td align="left">执行多行匹配</td>
 </tr>
 <tr>
-<td style="text-align:left">s</td>
-<td style="text-align:left">正则中的 “.”会匹配所有字符，包括换行和结束符</td>
+<td align="left">s</td>
+<td align="left">正则中的 “.”会匹配所有字符，包括换行和结束符</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h3><table>
 <thead>
 <tr>
-<th style="text-align:left">表达式</th>
-<th style="text-align:left">说明</th>
+<th align="left">表达式</th>
+<th align="left">说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">[abc]</td>
-<td style="text-align:left">查找方括号之间的任何字符</td>
+<tbody><tr>
+<td align="left">[abc]</td>
+<td align="left">查找方括号之间的任何字符</td>
 </tr>
 <tr>
-<td style="text-align:left">[^abc]</td>
-<td style="text-align:left">查找任何不在方括号之间的字符</td>
+<td align="left">[^abc]</td>
+<td align="left">查找任何不在方括号之间的字符</td>
 </tr>
 <tr>
-<td style="text-align:left">[0-9]</td>
-<td style="text-align:left">查找任何从 0 至 9 的数字</td>
+<td align="left">[0-9]</td>
+<td align="left">查找任何从 0 至 9 的数字</td>
 </tr>
 <tr>
-<td style="text-align:left">[a-z]</td>
-<td style="text-align:left">查找任何从小写 a 到小写 z 的字符</td>
+<td align="left">[a-z]</td>
+<td align="left">查找任何从小写 a 到小写 z 的字符</td>
 </tr>
 <tr>
-<td style="text-align:left">[A-Z]</td>
-<td style="text-align:left">查找任何从大写 A 到大写 Z 的字符</td>
+<td align="left">[A-Z]</td>
+<td align="left">查找任何从大写 A 到大写 Z 的字符</td>
 </tr>
 <tr>
-<td style="text-align:left">[A-z]</td>
-<td style="text-align:left">查找任何从大写 A 到小写 z 的字符</td>
+<td align="left">[A-z]</td>
+<td align="left">查找任何从大写 A 到小写 z 的字符</td>
 </tr>
 <tr>
-<td style="text-align:left">[adgk]</td>
-<td style="text-align:left">查找给定集合内的任何字符</td>
+<td align="left">[adgk]</td>
+<td align="left">查找给定集合内的任何字符</td>
 </tr>
 <tr>
-<td style="text-align:left">[^adgk]</td>
-<td style="text-align:left">查找给定集合外的任何字符</td>
+<td align="left">[^adgk]</td>
+<td align="left">查找给定集合外的任何字符</td>
 </tr>
 <tr>
-<td style="text-align:left">(red/blue/green)</td>
-<td style="text-align:left">查找任何指定的选项</td>
+<td align="left">(red/blue/green)</td>
+<td align="left">查找任何指定的选项</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <blockquote>
 <p>注意：本文中的表格无法转义“|”，因此上方的“/”实际是“|”</p>
 </blockquote>
 <h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><table>
 <thead>
 <tr>
-<th style="text-align:left">元字符</th>
-<th style="text-align:left">描述</th>
+<th align="left">元字符</th>
+<th align="left">描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">.</td>
-<td style="text-align:left">查找单个字符，除了换行和行结束符</td>
+<tbody><tr>
+<td align="left">.</td>
+<td align="left">查找单个字符，除了换行和行结束符</td>
 </tr>
 <tr>
-<td style="text-align:left">\w</td>
-<td style="text-align:left">查找单词字符</td>
+<td align="left">\w</td>
+<td align="left">查找单词字符</td>
 </tr>
 <tr>
-<td style="text-align:left">\W</td>
-<td style="text-align:left">查找非单词字符</td>
+<td align="left">\W</td>
+<td align="left">查找非单词字符</td>
 </tr>
 <tr>
-<td style="text-align:left">\d</td>
-<td style="text-align:left">查找数字</td>
+<td align="left">\d</td>
+<td align="left">查找数字</td>
 </tr>
 <tr>
-<td style="text-align:left">\D</td>
-<td style="text-align:left">查找非数字字符</td>
+<td align="left">\D</td>
+<td align="left">查找非数字字符</td>
 </tr>
 <tr>
-<td style="text-align:left">\s</td>
-<td style="text-align:left">查找空白字符</td>
+<td align="left">\s</td>
+<td align="left">查找空白字符</td>
 </tr>
 <tr>
-<td style="text-align:left">\S</td>
-<td style="text-align:left">查找非空白字符</td>
+<td align="left">\S</td>
+<td align="left">查找非空白字符</td>
 </tr>
 <tr>
-<td style="text-align:left">\b</td>
-<td style="text-align:left">匹配单词边界</td>
+<td align="left">\b</td>
+<td align="left">匹配单词边界</td>
 </tr>
 <tr>
-<td style="text-align:left">\B</td>
-<td style="text-align:left">匹配非单词边界</td>
+<td align="left">\B</td>
+<td align="left">匹配非单词边界</td>
 </tr>
 <tr>
-<td style="text-align:left">\0</td>
-<td style="text-align:left">查找 NUL 字符</td>
+<td align="left">\0</td>
+<td align="left">查找 NUL 字符</td>
 </tr>
 <tr>
-<td style="text-align:left">\n</td>
-<td style="text-align:left">查找换行符</td>
+<td align="left">\n</td>
+<td align="left">查找换行符</td>
 </tr>
 <tr>
-<td style="text-align:left">\f</td>
-<td style="text-align:left">查找换页符</td>
+<td align="left">\f</td>
+<td align="left">查找换页符</td>
 </tr>
 <tr>
-<td style="text-align:left">\r</td>
-<td style="text-align:left">查找回车符</td>
+<td align="left">\r</td>
+<td align="left">查找回车符</td>
 </tr>
 <tr>
-<td style="text-align:left">\t</td>
-<td style="text-align:left">查找制表符</td>
+<td align="left">\t</td>
+<td align="left">查找制表符</td>
 </tr>
 <tr>
-<td style="text-align:left">\v</td>
-<td style="text-align:left">查找垂直制表符</td>
+<td align="left">\v</td>
+<td align="left">查找垂直制表符</td>
 </tr>
 <tr>
-<td style="text-align:left">\xxx</td>
-<td style="text-align:left">查找以八进制数 xxx 规定的字符</td>
+<td align="left">\xxx</td>
+<td align="left">查找以八进制数 xxx 规定的字符</td>
 </tr>
 <tr>
-<td style="text-align:left">\xdd</td>
-<td style="text-align:left">查找以十六进制数 dd 规定的字符</td>
+<td align="left">\xdd</td>
+<td align="left">查找以十六进制数 dd 规定的字符</td>
 </tr>
 <tr>
-<td style="text-align:left">\uxxxx</td>
-<td style="text-align:left">查找以十六进制数 xxxx 规定的 Unicode 字符</td>
+<td align="left">\uxxxx</td>
+<td align="left">查找以十六进制数 xxxx 规定的 Unicode 字符</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h3><table>
 <thead>
 <tr>
-<th style="text-align:left">量词</th>
-<th style="text-align:left">描述</th>
+<th align="left">量词</th>
+<th align="left">描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">n+</td>
-<td style="text-align:left">匹配任何包含至少一个 n 的字符串</td>
+<tbody><tr>
+<td align="left">n+</td>
+<td align="left">匹配任何包含至少一个 n 的字符串</td>
 </tr>
 <tr>
-<td style="text-align:left">n*</td>
-<td style="text-align:left">匹配任何包含零个或多个 n 的字符串</td>
+<td align="left">n*</td>
+<td align="left">匹配任何包含零个或多个 n 的字符串</td>
 </tr>
 <tr>
-<td style="text-align:left">n?</td>
-<td style="text-align:left">匹配任何包含零个或一个 n 的字符串</td>
+<td align="left">n?</td>
+<td align="left">匹配任何包含零个或一个 n 的字符串</td>
 </tr>
 <tr>
-<td style="text-align:left">n{X}</td>
-<td style="text-align:left">匹配包含 X 个 n 的序列的字符串</td>
+<td align="left">n{X}</td>
+<td align="left">匹配包含 X 个 n 的序列的字符串</td>
 </tr>
 <tr>
-<td style="text-align:left">n{X,Y}</td>
-<td style="text-align:left">匹配包含 X 至 Y 个 n 的序列的字符串</td>
+<td align="left">n{X,Y}</td>
+<td align="left">匹配包含 X 至 Y 个 n 的序列的字符串</td>
 </tr>
 <tr>
-<td style="text-align:left">n{X,}</td>
-<td style="text-align:left">匹配包含至少 X 个 n 的序列的字符串</td>
+<td align="left">n{X,}</td>
+<td align="left">匹配包含至少 X 个 n 的序列的字符串</td>
 </tr>
 <tr>
-<td style="text-align:left">n$</td>
-<td style="text-align:left">匹配任何结尾为 n 的字符串</td>
+<td align="left">n$</td>
+<td align="left">匹配任何结尾为 n 的字符串</td>
 </tr>
 <tr>
-<td style="text-align:left">^n</td>
-<td style="text-align:left">匹配任何开头为 n 的字符串</td>
+<td align="left">^n</td>
+<td align="left">匹配任何开头为 n 的字符串</td>
 </tr>
 <tr>
-<td style="text-align:left">?=n</td>
-<td style="text-align:left">匹配任何其后紧接指定字符串 n 的字符串</td>
+<td align="left">?=n</td>
+<td align="left">匹配任何其后紧接指定字符串 n 的字符串</td>
 </tr>
 <tr>
-<td style="text-align:left">?!n</td>
-<td style="text-align:left">匹配任何其后没有紧接指定字符串 n 的字符串</td>
+<td align="left">?!n</td>
+<td align="left">匹配任何其后没有紧接指定字符串 n 的字符串</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="支持正则表达式的-String-对象的方法"><a href="#支持正则表达式的-String-对象的方法" class="headerlink" title="支持正则表达式的 String 对象的方法"></a>支持正则表达式的 String 对象的方法</h3><table>
 <thead>
 <tr>
@@ -387,8 +375,7 @@ var themeMenus = {};
 <th>描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>search</td>
 <td>检索与正则表达式相匹配的值</td>
 </tr>
@@ -404,8 +391,7 @@ var themeMenus = {};
 <td>split</td>
 <td>把字符串分割为字符串数组</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="处理字符串"><a href="#处理字符串" class="headerlink" title="处理字符串"></a>处理字符串</h3><ul>
 <li><p>匹配 : 使用reg.test(str)判断一个字符串是否符合我们制定的规则</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/\d/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'zhu'</span>)); <span class="comment">//-&gt;false</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'1'</span>)); <span class="comment">//-&gt;true</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'zhufeng01'</span>)); <span class="comment">//-&gt;true</span></span><br></pre></td></tr></table></figure>
@@ -417,6 +403,7 @@ var themeMenus = {};
 </li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str2 = <span class="string">'gu123gu234gu4560'</span>;</span><br><span class="line"><span class="keyword">var</span> reg2 = <span class="regexp">/gu(\d+)/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg2.exec(str2)) <span class="comment">//=&gt;["gu123","123"...]</span></span><br><span class="line"><span class="built_in">console</span>.log(reg2.exec(str2)) <span class="comment">//=&gt;["gu234","234"...]</span></span><br><span class="line"><span class="built_in">console</span>.log(reg2.exec(str2)) <span class="comment">//=&gt;["gu345","345"...]</span></span><br><span class="line"><span class="built_in">console</span>.log(str2.match(reg2)) <span class="comment">//=&gt;["gu123","gu234","gu345"]</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="正则捕获"><a href="#正则捕获" class="headerlink" title="正则捕获"></a>正则捕获</h3><ul>
 <li><p>通过exec每一次捕获的时候都是先进行默认匹配,如果没有匹配成功的,捕获的结果是null;只有有匹配的内容我们才能捕获到</p>
 </li>
@@ -459,6 +446,7 @@ var themeMenus = {};
 </li>
 <li><p>replace执行机制</p>
   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//和exec的机制相似</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">'gu2893gu898gu674'</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/gu(\d+)/g</span>;</span><br><span class="line">str.replace(reg,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">//捕获几次, 执行几次密名函数</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>) <span class="comment">//arguments就是捕获到的值组成的类数组, 同样可以捕获到分组的内容</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'gu捕获到了'</span> <span class="comment">//return的值就是要替换的值</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h2 id="常用正则"><a href="#常用正则" class="headerlink" title="常用正则"></a>常用正则</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.有效数字正则：正数,负数,0,小数</span></span><br><span class="line"><span class="comment">//-&gt; "."可能出现, 可能不出现,出现后面必须跟一位或多位数字</span></span><br><span class="line"><span class="comment">//-&gt; 最开始可以有+/-也可以没有</span></span><br><span class="line"><span class="comment">//-&gt; 整数部分, 一位数也可以是0~9之间的一个, 多位数不能以0开头</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//注意：</span></span><br><span class="line"><span class="comment">//-&gt; []中出现的所有字符只是自身字符的含义, 没有特殊含义</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^[+-]?(\d|[1-9]\d+)(\.\d+)?$/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//2.年龄在18~65</span></span><br><span class="line"><span class="comment">//-&gt; 18-19阶段</span></span><br><span class="line"><span class="comment">//-&gt; 20-59阶段</span></span><br><span class="line"><span class="comment">//-&gt; 60-65阶段</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//注意：</span></span><br><span class="line"><span class="comment">//-&gt; []中不识别两位数</span></span><br><span class="line"><span class="comment">//-&gt; [12] 1或者2</span></span><br><span class="line"><span class="comment">//-&gt; [12-67] 1 , 2-6 , 7中的一个</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^(1[8-9]|[2-5]\d|6[0-5])$/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//3、验证邮箱的正则(简版)//左边：数字、字母、下环线、.、</span></span><br><span class="line"><span class="keyword">var</span> reg=<span class="regexp">/^[\w.-]+@[0-9a-zA-Z]+(\.[a-zA-Z]&#123;2,4&#125;)&#123;1,2&#125;$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'1229303942@qq.com'</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">//4、中国标准真实姓名2-4位汉字</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^[\u4e00-\u9fa5]&#123;2,4&#125;$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'顾连生'</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">//5、身份证号码</span></span><br><span class="line"><span class="comment">//var reg=/^\d&#123;17&#125;(\d|X)$/;</span></span><br><span class="line"><span class="comment">//13 0828 1990 12 04 06 1 7</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">'342622194502047680'</span>;</span><br><span class="line"><span class="keyword">var</span> reg=<span class="regexp">/^(\d&#123;2&#125;)(\d&#123;4&#125;)(\d&#123;4&#125;)(\d&#123;2&#125;)(\d&#123;2&#125;)(\d&#123;2&#125;)(\d)(\d|X)$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.exec(str));</span><br><span class="line"><span class="built_in">console</span>.log(str.match(reg));</span><br></pre></td></tr></table></figure>
@@ -468,11 +456,11 @@ var themeMenus = {};
     <footer class="entry-meta entry-footer">
       
 	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/JavaScript基础/">JavaScript基础</a>
+    <a class="article-category-link" href="/categories/JavaScript%E5%9F%BA%E7%A1%80/">JavaScript基础</a>
 
       
   <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js基础/">js基础</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js%E5%9F%BA%E7%A1%80/" rel="tag">js基础</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li></ul>
 
       
 
@@ -524,7 +512,7 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2018/09/10/js基础/事件绑定/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/10/js%E5%9F%BA%E7%A1%80/%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
@@ -534,7 +522,7 @@ var a = new Donate({
     </a>
   
   
-    <a href="/2018/09/10/js基础/DOM基础/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/09/10/js%E5%9F%BA%E7%A1%80/DOM%E5%9F%BA%E7%A1%80/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
       <div class="article-nav-title">DOM基础</div>
     </a>
@@ -564,8 +552,8 @@ var a = new Donate({
 
   <div class="clearfix container">
       <div class="site-info">
-        <p>友情链接：<a href="http://javacat.cn">javacat博客</a></p>
-          &copy; 2018 欢迎来到前端学习博客! All Rights Reserved.
+        <p>友情链接：<a href="http://javacat.cn" target="_blank" rel="noopener">javacat博客</a></p>
+          &copy; 2019 欢迎来到前端学习博客! All Rights Reserved.
           
             <span id="busuanzi_container_site_uv">
               本站访客数<span id="busuanzi_value_site_uv"></span>人次

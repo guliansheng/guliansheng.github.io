@@ -22,16 +22,14 @@
 <meta name="keywords" content="面向对象,原型链,原型链的查找机制,数据类型检测">
 <meta property="og:type" content="article">
 <meta property="og:title" content="原型链和数据类型检测">
-<meta property="og:url" content="http://www.guliansheng.club/2018/09/11/面向对象/原型链和数据类型检测/index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;www.guliansheng.club&#x2F;2018&#x2F;09&#x2F;11&#x2F;%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1&#x2F;%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B&#x2F;index.html">
 <meta property="og:site_name" content="欢迎来到前端学习博客!">
 <meta property="og:description" content="本篇章讲述的是js中的面向对象编程，第二节主要介绍原型链和原型链中的查找机制">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://www.guliansheng.club/img/blog/Object/函数和对象原型链.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;www.guliansheng.club&#x2F;img&#x2F;blog&#x2F;Object&#x2F;%E5%87%BD%E6%95%B0%E5%92%8C%E5%AF%B9%E8%B1%A1%E5%8E%9F%E5%9E%8B%E9%93%BE.png">
 <meta property="og:updated_time" content="2018-09-24T02:29:30.359Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="原型链和数据类型检测">
-<meta name="twitter:description" content="本篇章讲述的是js中的面向对象编程，第二节主要介绍原型链和原型链中的查找机制">
-<meta name="twitter:image" content="http://www.guliansheng.club/img/blog/Object/函数和对象原型链.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;www.guliansheng.club&#x2F;img&#x2F;blog&#x2F;Object&#x2F;%E5%87%BD%E6%95%B0%E5%92%8C%E5%AF%B9%E8%B1%A1%E5%8E%9F%E5%9E%8B%E9%93%BE.png">
   
     <link rel="alternate" href="/atom.xml" title="欢迎来到前端学习博客!" type="application/atom+xml">
   
@@ -138,7 +136,7 @@ var themeMenus = {};
     
     <div class="article-meta">
       
-	Posted on <a href="/2018/09/11/面向对象/原型链和数据类型检测/" class="article-date">
+	Posted on <a href="/2018/09/11/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B/" class="article-date">
 	  <time datetime="2018-09-11T02:32:47.000Z" itemprop="datePublished">2018-09-11</time>
 	</a>
 
@@ -151,7 +149,9 @@ var themeMenus = {};
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本篇章讲述的是js中的面向对象编程，第二节主要介绍原型链和原型链中的查找机制<br><a id="more"></a></p>
+        <p>本篇章讲述的是js中的面向对象编程，第二节主要介绍原型链和原型链中的查找机制</p>
+<a id="more"></a>
+
 <h2 id="原型链和原型链的查找机制"><a href="#原型链和原型链的查找机制" class="headerlink" title="原型链和原型链的查找机制"></a>原型链和原型链的查找机制</h2><h3 id="函数和对象"><a href="#函数和对象" class="headerlink" title="函数和对象"></a>函数和对象</h3><ul>
 <li>【函数】<ul>
 <li>普通函数、类（所有的类：内置类(Array…)、自己创建的类）</li>
@@ -208,16 +208,12 @@ var themeMenus = {};
 </li>
 </ul>
 <h4 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h4><ul>
-<li><p>object：对象</p>
-<ul>
-<li><p>{}：普通对象</p>
-<ul>
-<li>删除属性值<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">obj.xxx = <span class="literal">null</span>; <span class="comment">//=&gt;假删除(让其属性值为null，但是属性还在对象中)</span></span><br><span class="line"><span class="keyword">delete</span> obj.xxx; <span class="comment">//=&gt;真删除(把整个属性都在对象中暴力移除)</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>object：对象<ul>
+<li>{}：普通对象<ul>
+<li>删除属性值<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">obj.xxx = <span class="literal">null</span>; <span class="comment">//=&gt;假删除(让其属性值为null，但是属性还在对象中)</span></span><br><span class="line"><span class="keyword">delete</span> obj.xxx; <span class="comment">//=&gt;真删除(把整个属性都在对象中暴力移除)</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
-<li><p>[]：数组</p>
-</li>
+<li>[]：数组</li>
 <li>/^$/：正则</li>
 <li>…</li>
 </ul>
@@ -233,6 +229,7 @@ var themeMenus = {};
 </li>
 <li><p>局限：无法将对象类型的中的数据类型进行细分  </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="keyword">typeof</span> [] <span class="comment">//=&gt;"string"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="string">'基地搜'</span> <span class="comment">// =&gt; "string"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="number">234</span> <span class="comment">// =&gt; "number"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span> <span class="comment">//=&gt;"undefined"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125; <span class="comment">//=&gt;"function"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="built_in">console</span>.log <span class="comment">//=&gt;"function"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span> <span class="comment">// =&gt;null： "object"</span></span><br><span class="line"><span class="keyword">typeof</span> &#123;&#125; <span class="comment">// =&gt;对象： "object"</span></span><br><span class="line"><span class="keyword">typeof</span> [] <span class="comment">// =&gt;数组： "object"</span></span><br><span class="line"><span class="keyword">typeof</span> /^$/ <span class="comment">// =&gt;正则： "object"</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">//typeof还可以用来检测一个变量是否存在</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> a != <span class="string">'undefined'</span>)&#123;alert(<span class="string">'值存在'</span>)&#125; <span class="comment">//不使用if(a)，是因为如果a未声明则会出错</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h4 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h4><ul>
@@ -277,12 +274,13 @@ var themeMenus = {};
 </li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CreateUsPerson.prototype.writeJs=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"my name is"</span>+<span class="keyword">this</span>.name+<span class="string">"，i can write is 啦！！"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p1=<span class="keyword">new</span> CreateJsPerson(<span class="string">"尹华芝"</span>,<span class="number">18</span>);</span><br><span class="line"><span class="keyword">var</span> p2=<span class="keyword">new</span> CreateUsPerson(<span class="string">"王小波"</span>,<span class="number">48</span>);</span><br><span class="line"><span class="built_in">console</span>.log(pl.writeJs === p2.writeJs);<span class="comment">//-&gt;true,公有属性是相同的</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><ul>
 <li><p>它是一种基于<strong>proto</strong>(隐式原型)向上查找的机制。当我们操作实例的某个属性或者方法的时候，首先找自己空间中私有的属性或者方法</p>
 <ul>
 <li><p>找到了，则结束查找，使用自己私有的即可</p>
 </li>
-<li><p>没有找到，则基于<strong>proto</strong>找所属类的prototype，如果找到就用这个公有的，如果没找到，基于原型上的proto继续向上查找，一直找到Object.prototype的原型为止，如果在没有，操作的属性或者方法不存在<br><img src="http://www.guliansheng.club/img/blog/Object/函数和对象原型链.png" alt="原型链（图片来源：珠峰培训）"></p>
+<li><p>没有找到，则基于<strong>proto</strong>找所属类的prototype，如果找到就用这个公有的，如果没找到，基于原型上的proto继续向上查找，一直找到Object.prototype的原型为止，如果在没有，操作的属性或者方法不存在<br><img src="http://www.guliansheng.club/img/blog/Object/%E5%87%BD%E6%95%B0%E5%92%8C%E5%AF%B9%E8%B1%A1%E5%8E%9F%E5%9E%8B%E9%93%BE.png" alt="原型链（图片来源：珠峰培训）"></p>
 </li>
 </ul>
 </li>
@@ -294,6 +292,7 @@ var themeMenus = {};
 </li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.x=<span class="number">100</span>;</span><br><span class="line">&#125;</span><br><span class="line">Fn.prototype=&#123;</span><br><span class="line">    <span class="keyword">constructor</span>:Fn,//手动添加一个<span class="keyword">constructor</span>属性指向Fn;</span><br><span class="line">    a:function()&#123;</span><br><span class="line">    &#125;,</span><br><span class="line">    b:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> f = <span class="keyword">new</span> Fn;</span><br><span class="line"><span class="built_in">console</span>.log(f.constructor);<span class="comment">//没做任何处理,此时是Object</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><p>用这种方式给内置类增加公有的属性 </p>
 <ul>
@@ -301,6 +300,7 @@ var themeMenus = {};
 </li>
 <li><p>但是我们可以一个个的修改内置的方法，当我们通过下述方式在数组的原型上增加方法，如果方法名和原来内置的重复了，会把人家内置的修改掉 =&gt; 我们以后在内置类的原型上增加方法，命名都需要加特殊的前缀</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.sort=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"ok"</span>);<span class="comment">// this-&gt;ary  我们当前要操作的这个数组</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 </li>
@@ -317,11 +317,11 @@ var themeMenus = {};
     <footer class="entry-meta entry-footer">
       
 	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/JavaScript面向对象/">JavaScript面向对象</a>
+    <a class="article-category-link" href="/categories/JavaScript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">JavaScript面向对象</a>
 
       
   <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/原型链/">原型链</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/原型链的查找机制/">原型链的查找机制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据类型检测/">数据类型检测</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8E%9F%E5%9E%8B%E9%93%BE/" rel="tag">原型链</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E6%9F%A5%E6%89%BE%E6%9C%BA%E5%88%B6/" rel="tag">原型链的查找机制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B/" rel="tag">数据类型检测</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="tag">面向对象</a></li></ul>
 
       
 
@@ -373,7 +373,7 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2018/09/11/面向对象/面向对象3/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/11/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A13/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
@@ -383,7 +383,7 @@ var a = new Donate({
     </a>
   
   
-    <a href="/2018/09/11/面向对象/面向对象1/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/09/11/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A11/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
       <div class="article-nav-title">面向对象1</div>
     </a>
@@ -413,8 +413,8 @@ var a = new Donate({
 
   <div class="clearfix container">
       <div class="site-info">
-        <p>友情链接：<a href="http://javacat.cn">javacat博客</a></p>
-          &copy; 2018 欢迎来到前端学习博客! All Rights Reserved.
+        <p>友情链接：<a href="http://javacat.cn" target="_blank" rel="noopener">javacat博客</a></p>
+          &copy; 2019 欢迎来到前端学习博客! All Rights Reserved.
           
             <span id="busuanzi_container_site_uv">
               本站访客数<span id="busuanzi_value_site_uv"></span>人次

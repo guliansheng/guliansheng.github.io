@@ -18,15 +18,15 @@
   
   
   
-  <meta name="description" content="事件绑定及双向数据绑定1. 事件绑定基础 事件函数不需要传参时,不要加(),因为vue中的函数中会自动传入event对象,如果加了()时,event会变成undefined;当需要传参时,event对象用参数$event来代替,再传入其他参数  123456789101112131415161718192021222324252627282930313233343536373839404142">
+  <meta name="description" content="本文主要介绍vue中事件的绑定形式，及vue中的核心双向数据绑定。">
 <meta name="keywords" content="vue事件绑定,vue双向数据绑定">
 <meta property="og:type" content="article">
 <meta property="og:title" content="事件绑定及双向数据绑定">
 <meta property="og:url" content="http:&#x2F;&#x2F;www.guliansheng.club&#x2F;2019&#x2F;02&#x2F;26&#x2F;Vue&#x2F;%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A%E5%92%8C%E6%95%B0%E6%8D%AE%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A&#x2F;index.html">
 <meta property="og:site_name" content="欢迎来到前端学习博客!">
-<meta property="og:description" content="事件绑定及双向数据绑定1. 事件绑定基础 事件函数不需要传参时,不要加(),因为vue中的函数中会自动传入event对象,如果加了()时,event会变成undefined;当需要传参时,event对象用参数$event来代替,再传入其他参数  123456789101112131415161718192021222324252627282930313233343536373839404142">
+<meta property="og:description" content="本文主要介绍vue中事件的绑定形式，及vue中的核心双向数据绑定。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-26T11:20:43.447Z">
+<meta property="og:updated_time" content="2019-11-13T09:01:58.047Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="欢迎来到前端学习博客!" type="application/atom+xml">
@@ -147,7 +147,8 @@ var themeMenus = {};
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
+        <p>本文主要介绍vue中事件的绑定形式，及vue中的核心双向数据绑定。</p>
+<a id="more"></a>
 
 <h1 id="事件绑定及双向数据绑定"><a href="#事件绑定及双向数据绑定" class="headerlink" title="事件绑定及双向数据绑定"></a>事件绑定及双向数据绑定</h1><h2 id="1-事件绑定基础"><a href="#1-事件绑定基础" class="headerlink" title="1. 事件绑定基础"></a>1. 事件绑定基础</h2><ul>
 <li>事件函数不需要传参时,不要加(),因为vue中的函数中会自动传入event对象,如果加了()时,event会变成undefined;当需要传参时,event对象用参数$event来代替,再传入其他参数</li>
